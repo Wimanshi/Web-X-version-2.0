@@ -134,17 +134,16 @@
                 <?php include('errors.php'); ?>
                 <div class="input-group">
                     <label>Username</label>
-                    <input type="text" pattern="[a-zA-Z0-9-]+" placeholder="Pick a username with only English letters and numbers" name="username" value="<?php echo $username; ?>" required>
+                    <input type="text" pattern="[a-zA-Z0-9-]+" placeholder="Pick a username with only English letters and numbers" name="username"  required>
                 </div>
                 <div class="input-group">
                     <label>Email</label>
-                    <input type="email" placeholder="you@example.com"  name="email" value="<?php echo $email; ?>" required>
+                    <input type="email" placeholder="you@example.com"  name="email"  required>
                 </div>
         
                 <div class="input-group">
                     <label>Phone</label>
-                    <input type="tel" placeholder="0XXXXXXXXX" pattern="[0]{1}[0-9]{9}" name="phone" pattern="/[a-z0-9_\-\+]+@[a-z0-9\-]+\.([a-z]{2,3})(?:\.[a-z]{2})?/i" value="<?php echo $phone;?>"
-            required>
+                    <input type="tel" placeholder="0XXXXXXXXX" pattern="[0]{1}[0-9]{9}" name="phone" pattern="/[a-z0-9_\-\+]+@[a-z0-9\-]+\.([a-z]{2,3})(?:\.[a-z]{2})?/i" required>
                 </div>
         
                 <div class="input-group">
