@@ -179,7 +179,7 @@ require_once ('class.Database.php');
         $db = Database::getInstance();
         $connection = $db->getConnection();
         $result_set = mysqli_query($connection,$query);
-        
+      
         echo "<div class='uza-blog-area section-padding-80'>";
         echo "<div class='container'>";
         echo "<div class='row'>";
@@ -195,7 +195,7 @@ require_once ('class.Database.php');
                         echo $row['username'];
                         echo "</span>";
                         echo "<br>";
-                        echo $developer_type['type'];
+                        echo $row['developer_type'];
                         echo "</span>";
                         echo "<a href='#' class='post-title'>";
                         echo $row['email'];

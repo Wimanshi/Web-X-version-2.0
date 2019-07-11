@@ -189,7 +189,7 @@ require_once ('class.Database.php');
             //$user = mysqli_fetch_assoc($result_set0);
             $d_email=$row['email'];
             echo "<div class='col-12 col-lg-4'>";
-                echo "<div class='single-blog-post bg-img mb-80' style='background-image: url(./img/bg-img/8.jpg);'>";
+                echo "<div class='single-blog-post bg-img mb-80' style='background-image: url(./img/bg-img/Graphic_design.jpg);'>";
                     echo "<div class='post-content'>";
                         echo "<span class='post-date'><span>";
                         echo $row['username'];
