@@ -151,11 +151,11 @@ require_once ('class.Database.php');
             <div class="row h-100 align-items-end">
                 <div class="col-12">
                     <div class="breadcumb--con">
-                        <h4 class="title" position="centre">Android Developing</h4>
+                        <h4 class="title" position="centre">iOS Developing</h4>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Android Developing</li>
+                                <li class="breadcrumb-item active" aria-current="page">iOS Developing</li>
                             </ol>
                         </nav>
                     </div>
@@ -172,10 +172,10 @@ require_once ('class.Database.php');
 
     <!-- ***** Developer list Area Start ***** -->
     <div class="post-content text-center mb-50">
-        <h2>Our skillful Android Developers' List</h2>
+        <h2>Our skillful iOS Developers' List</h2>
     </div>
     <?php
-        $query = "SELECT * FROM developer WHERE developer_type='AndroidDeveloper'";
+        $query = "SELECT * FROM developer WHERE developer_type='IOSDeveloper'";
         $db = Database::getInstance();
         $connection = $db->getConnection();
         $result_set = mysqli_query($connection,$query);
@@ -195,7 +195,7 @@ require_once ('class.Database.php');
                         echo $row['username'];
                         echo "</span>";
                         echo "<br>";
-                        echo "Android Developer";
+                        echo "iOS Developer";
                         echo "</span>";
                         echo "<a href='#' class='post-title'>";
                         echo $row['email'];
