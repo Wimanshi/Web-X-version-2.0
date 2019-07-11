@@ -86,49 +86,57 @@ require_once ('class.Database.php');
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="./index.html">- Home</a></li>
+                                        <li><a href="./start exploring.html">- Start Exploring</a></li>
                                         <li><a href="./about.html">- About</a></li>
                                         <li><a href="./services.html">- Services</a></li>
                                         <li><a href="./portfolio.html">- Portfolio</a></li>
                                         <li><a href="./portfolio-single.html">- Single Portfolio</a></li>
+                                        <li><a href="#">- Developer List</a>
+                                            <ul class="dropdown">
+                                                <li><a href="./allDevelopers.php">- All Developers</a>
+                                                    <ul class="dropdown">
+                                                        <li><a href="./android.php">- Android Developing</a></li>
+                                                        <li><a href="./graphic.php">- Graphic Designing</a></li>
+                                                        <li><a href="./ios.php">- iOS Developing</a></li>
+                                                        <li><a href="./website.php">- Website Developing</a></li>
+                                                        <li><a href="./video.php">- Video Editing</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!--li><a href="#">- Dropdown Item</a></li>
+                                                <li><a href="#">- Dropdown Item</a></li-->
+                                            </ul>
+                                        </li>
                                         <li><a href="./blog.html">- Blog</a></li>
                                         <li><a href="./single-blog.html">- Blog Details</a></li>
                                         <li><a href="./contact.html">- Contact</a></li>
-                                        <li><a href="#">- Dropdown</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a>
-                                                    <ul class="dropdown">
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                        <li><a href="#">- Even Dropdown</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="./portfolio.html">Portfolio</a></li>
+                                <!--li><a href="./portfolio.html">Portfolio</a></li-->
                                 <li><a href="./about.html">About</a></li>
-                                <li><a href="#">Blog</a>
+                                <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
-                                        <li><a href="./blog.html">- Blog</a></li>
-                                        <li><a href="./single-blog.html">- Blog Details</a></li>
+                                        <li><a href="./allDevelopers.php">- All Developers</a></li>
+                                        <li><a href="./android.php">- Android Developing</a></li>
+                                        <li><a href="./graphic.php">- Graphic Designing</a></li>
+                                        <li><a href="./ios.php">- iOS Developing</a></li>
+                                        <li><a href="./website.php">- Website Developing</a></li>
+                                        <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="./contact.html">Contact</a></li>
                             </ul>
 
-                            <!-- Get A Quote -->
-                            <div class="get-a-quote ml-4 mr-3">
-                                <a href="#" class="btn uza-btn">Profile &amp box</a>
+                            <!-- Profile -->
+                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                                <a href="./profile-master/index.html" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
                             <div class="login-register-btn mx-3">
-                                <a href="#">Login <span>/ Register</span></a>
+                                <a href="login.html">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3">
+                                <a href="register.html">Register<i class="icon_gift_alt"></i></a>
                             </div>
 
                             <!-- Search Icon -->
