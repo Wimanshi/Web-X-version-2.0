@@ -45,7 +45,7 @@ require_once ('class.Database.php');
                         <!-- Close Button -->
                         <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
                         <!-- Form -->
-                        <form action="index.html" method="post">
+                        <form action="index.php" method="post">
                             <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
                             <button type="submit">Search</button>
                         </form>
@@ -65,7 +65,7 @@ require_once ('class.Database.php');
                 <nav class="classy-navbar justify-content-between" id="uzaNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.php"><img src="./img/core-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -82,15 +82,13 @@ require_once ('class.Database.php');
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="current-item"><a href="./index.html">Home</a></li>
+                                <li class="current-item"><a href="./index.php">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./index.html">- Home</a></li>
-                                        <li><a href="./start exploring.html">- Start Exploring</a></li>
-                                        <li><a href="./about.html">- About</a></li>
-                                        <li><a href="./services.html">- Services</a></li>
-                                        <li><a href="./portfolio.html">- Portfolio</a></li>
-                                        <li><a href="./portfolio-single.html">- Single Portfolio</a></li>
+                                        <li><a href="./index.php">- Home</a></li>
+                                        <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                        <li><a href="./about.php">- About</a></li>
+                                        <li><a href="./services.php">- Services</a></li>
                                         <li><a href="#">- Developer List</a>
                                             <ul class="dropdown">
                                                 <li><a href="./allDevelopers.php">- All Developers</a>
@@ -106,13 +104,15 @@ require_once ('class.Database.php');
                                                 <li><a href="#">- Dropdown Item</a></li-->
                                             </ul>
                                         </li>
-                                        <li><a href="./blog.html">- Blog</a></li>
-                                        <li><a href="./single-blog.html">- Blog Details</a></li>
-                                        <li><a href="./contact.html">- Contact</a></li>
+                                        <li><a href="./portfolio.php">- Portfolio</a></li>
+                                        <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
+                                        <li><a href="./blog.php">- Blog</a></li>
+                                        <li><a href="./single-blog.php">- Blog Details</a></li>
+                                        <li><a href="./contact.php">- Contact</a></li>
                                     </ul>
                                 </li>
-                                <!--li><a href="./portfolio.html">Portfolio</a></li-->
-                                <li><a href="./about.html">About</a></li>
+                                <!--li><a href="./portfolio.php">Portfolio</a></li-->
+                                <li><a href="./about.php">About</a></li>
                                 <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
                                         <li><a href="./allDevelopers.php">- All Developers</a></li>
@@ -123,20 +123,20 @@ require_once ('class.Database.php');
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
                             </ul>
 
                             <!-- Profile -->
                             <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="./profile-master/index.html" class="btn uza-btn">Profile </a>
+                                <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
                             <div class="login-register-btn mx-3">
-                                <a href="login.html">Login<i class="icon_lock-open_alt"></i></a>    
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
                             </div>
                             <div class="login-register-btn mx-3">
-                                <a href="register.html">Register<i class="icon_gift_alt"></i></a>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
                             </div>
 
                             <!-- Search Icon -->
@@ -162,7 +162,7 @@ require_once ('class.Database.php');
                         <h4 class="title" position="centre">Website Developing</h4>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Website Developing</li>
                             </ol>
                         </nav>
@@ -260,11 +260,11 @@ require_once ('class.Database.php');
                         <!-- Nav -->
                         <nav>
                             <ul class="our-link">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="register.html">Forum Registeration</a></li>
-                                <li><a href="login.html">Forum Sign In</a></li>
+                                <li><a href="about.php">About Us</a></li>
+                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
+                                <li><a href="register.php">Forum Registeration</a></li>
+                                <li><a href="login.php">Forum Sign In</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -283,7 +283,7 @@ require_once ('class.Database.php');
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
