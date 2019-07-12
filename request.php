@@ -125,10 +125,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                     <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
                                 </div>
     
-                                <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
+                               
     
                                 <!-- Search Icon -->
                                 <div class="search-icon" data-toggle="modal" data-target="#searchModal">
@@ -151,12 +148,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                 <div class="col-12">
                     <div class="breadcumb--con">
                         <h2 class="title">Send Request</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Login <i class="icon_lock-open_alt"></i></li>
-                            </ol>
-                        </nav>
+                        
                     </div>
                 </div>
             </div>
@@ -235,7 +227,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                     </div>
                                 </div>
 
-                                <div class="input-group1">
+                                <div class="col-lg-8">
                                     <select class="form-control mb-30" name="period" class="select">
                                         <option>Select Duration</option>
                                         <option value="3 days">3 days</option>

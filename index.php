@@ -119,7 +119,7 @@
 
                             <!-- Profile -->
                             <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="indexProfile.php" class="btn uza-btn">Profile </a>
+                                <a href="./client-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->

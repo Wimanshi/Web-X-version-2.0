@@ -1,4 +1,4 @@
-<?php include('includes/client-header.php');
+<?php //include('includes/client-header.php');
   require_once ('class.Database.php');
   require_once ('class.CancelState.php');
   require_once ('class.Request.php');
