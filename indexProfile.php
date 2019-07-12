@@ -258,10 +258,11 @@ require_once ('class.Database.php');
 			<div class="row">
 				<div class="col-md-4">
 					<ul class="info">
-						<li><span class="first-block">Full Name:</span><span class="second-block">Louie Jie Mahusay</span></li>
+						<li><span class="first-block">username:</span><span class="second-block">Louie Jie Mahusay</span></li>
 						<li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li>
 						<li><span class="first-block">Email:</span><span class="second-block">info@yoursite.com</span></li>
-						<li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li>
+						<li><span class="first-block">profession:</span><span class="second-block">aaaaaaa</span></li>
+						<li><span class="first-block">linkedIn:</span><span class="second-block">info@yoursite.linkedIn</span></li>
 					</ul>
 				</div>
 				<div class="col-md-8">
