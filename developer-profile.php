@@ -1,20 +1,84 @@
+<?php  session_start();
+    require_once ('class.hashlist.php');
+    require_once ('class.Request.php');
 
-<?php 
-require_once ('class.Database.php');
-?>
 
+require_once ('class.Database.php');?>
+<!--php require_once('project/inc/connection.php'); ?--->
+<!--?php require_once('project/inc/functions.php'); ?-->
 <?php 
+	//checking if a user is logged in
+	if (!isset($_SESSION['username'])){
+		header('Location: index.php');
+	}
+
+	$user_list = '';
+    //getting the list of users
+    $email=$_SESSION['email'];
+    //$userr=hashlist::getUser($email);
+
+    $query = "SELECT * FROM developer WHERE email= '{$email}' LIMIT 1";
+   
+    //$connection=mysqli_connect('localhost','root','','registration');
     $db = Database::getInstance();
     $connection = $db->getConnection();
+    $result_set = mysqli_query($connection,$query);
+   
+
+    if(mysqli_num_rows($result_set)==1){
+        $user = mysqli_fetch_assoc($result_set);
+        $username = $user['username'];
+        $email = $user['email'];
+        $phone = $user['phone'];
+        $proffesion = $user['developer_type'];
+        $linkedIn = $user['linkedIn'];
+        $ranking = (int)$user['ranking'];
+        $description = $user['description'];
+
+
+        $query12 = "SELECT * FROM objreq";    
+        $result_set12 = mysqli_query($connection,$query12);
+        $resultLists123="";
+        $rate=0;
+        $i=0;
+        //echo $d_email;
+        while($r=mysqli_fetch_array($result_set12,MYSQLI_ASSOC)){
+            $req=$r['req'];
+            $rq=unserialize($req);
+            if($rq->getDevEmail()==$email){
+                //echo $rate;
+                if($rq->getDevRating()!="not yet"){
+                    $rate=$rate+(float)$rq->getDevRating();
+                    //echo $rate;
+                    $i=$i+1;
+                }
+            }
+            //$resultLists123.="<tr>";
+            //$description123=$r['description'];
+            //$resultLists123.="{$description123}";
+            //$resultLists123.="</tr>";
+            //$resultLists123.="<br></br>";
+        }
+        if ($i !=0){
+            $rate=round($rate/$i,0);
+        }
+
+        $sss="";
+        $i = 1;
+        $rate=(int)$rate;
+        while($i <= $rate){
+            $i++;
+            $sss.="<span style='font-size:40px;'>&#9733;</span>";
+}
+    
+$sss.=" ";
+        $image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['profile_photo']).'" height="200" width = "200"/>';
+    }
+    //verify_query($result_set);
+    
+
+	
 ?>
-
-
-
-
-
-
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -84,10 +148,11 @@ require_once ('class.Database.php');
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
-							<p><a href="./index.php" class="btn btn-default btn-lg">Home</a></p>
-							<h1><span>Louie Jie Mahusay</span></h1>
-							<h3><span>Web Developer </span></h3>
+							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<p><a href="./developer-edit-profile.php" class="btn btn-default btn-lg">edit profile</a></p>
+							<p><a href="./view_request.php" class="btn btn-default btn-lg">View Requests</a></p>
+							<h1><span><?php echo $username;?></span></h1>
+							<h3><span><?php echo  $proffesion ?> </span></h3>
 							<p>
 								<ul class="fh5co-social-icons">
 									<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -113,11 +178,11 @@ require_once ('class.Database.php');
 			<div class="row">
 				<div class="col-md-4">
 					<ul class="info">
-						<li><span class="first-block">username:</span><span class="second-block">Louie Jie Mahusay</span></li>
-						<li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li>
-						<li><span class="first-block">Email:</span><span class="second-block">info@yoursite.com</span></li>
-						<li><span class="first-block">profession:</span><span class="second-block">aaaaaaa</span></li>
-						<li><span class="first-block">linkedIn:</span><span class="second-block">info@yoursite.linkedIn</span></li>
+						<li><span class="first-block">username:</span><span class="second-block"><?php echo  $username ?></span></li>
+						<li><span class="first-block">Phone:</span><span class="second-block"><?php echo $phone ?></span></li>
+						<li><span class="first-block">Email:</span><span class="second-block"><?php echo $email ?></span></li>
+						<li><span class="first-block">profession:</span><span class="second-block"><?php echo $proffesion ?></span></li>
+						<li><span class="first-block">linkedIn:</span><span class="second-block"><?php echo $linkedIn ?></span></li>
 					</ul>
 				</div>
 				<div class="col-md-8">
@@ -236,9 +301,9 @@ require_once ('class.Database.php');
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-	</div>
-	
-	<!-- jQuery -->
+    </div>
+    
+    <!-- jQuery -->
 	<script src="jsProfile/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="jsProfile/jquery.easing.1.3.js"></script>
@@ -259,4 +324,3 @@ require_once ('class.Database.php');
 
 	</body>
 </html>
-
