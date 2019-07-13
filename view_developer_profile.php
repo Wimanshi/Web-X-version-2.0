@@ -49,7 +49,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
         $_SESSION['project_type']="Web Application/Web Site";
     }else if($type=="GraphicDesigner"){
         $_SESSION['project_type']="Graphic Design";
-    }else if($type=="VideoEditor"){
+    }else if($type=="VedioEditor"){
         $_SESSION['project_type']="Video/Sort Film";
     }
 

@@ -188,7 +188,7 @@
             array_push($errors,"type of the project is required");
         }
         if(count($errors)==0){
-            $request=new Request(1,$clientEmail,$clientName,$devEmail,$devName,$deuration,$description);
+            $request=new Request(1,$clientEmail,$clientName,$devEmail,$devName,$deuration,$description,$reqType);
             $req=serialize($request);
             $sql0="INSERT INTO objreq (req) VALUES('$req')";
             $cn=$request->getClientName();
