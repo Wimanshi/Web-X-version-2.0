@@ -18,12 +18,16 @@ require_once ('class.Database.php');?>
     //$userr=hashlist::getUser($email);
 
     $query = "SELECT * FROM developer WHERE email= '{$email}' LIMIT 1";
+
+    $querySkills="SELECT * FROM tehnicalskills WHERE email='{$email}'" ;
+   
    
     //$connection=mysqli_connect('localhost','root','','registration');
     $db = Database::getInstance();
     $connection = $db->getConnection();
     $result_set = mysqli_query($connection,$query);
-   
+    $skills= mysqli_query($connection,$querySkills);
+
 
     if(mysqli_num_rows($result_set)==1){
         $user = mysqli_fetch_assoc($result_set);
@@ -351,31 +355,17 @@ $sss.=" ";
 				</div>
 			</div>
 			<div class="row row-pb-md">
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="95"><span><strong>HTML5</strong>95%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="93"><span><strong>CSS3</strong>93%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>jQuery</strong>90%</span></div>
-				</div>
-
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="89"><span><strong>PHP</strong>89%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="85"><span><strong>MySQL</strong>85%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>AngularJS</strong>90%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="85"><span><strong>Ruby</strong>85%</span></div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="90"><span><strong>Java</strong>90%</span></div>
-				</div>
+				
+                <?php while($skill=mysqli_fetch_array($skills,MYSQLI_ASSOC)){
+                    $language=$skill['skill'];
+                    $percentage=$skill['percentage'];
+                    echo "<div class='col-md-3 col-sm-6 col-xs-12 text-center'>";
+                    echo "<div class='chart' data-percent='$percentage'><span><strong>$language</strong>$percentage%</span></div>";
+                    echo "</div>";
+                }?>
+					
+				
+				
 			</div>
 			
 		</div>

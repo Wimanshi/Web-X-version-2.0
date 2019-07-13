@@ -48,6 +48,7 @@
         //$password_2=mysqli_real_escape_string($connection,$_POST['password_2']);
         $phone=mysqli_real_escape_string($connection,$_POST['Phone']);
         $description=mysqli_real_escape_string($connection,$_POST['description']);
+        $skills=mysqli_real_escape_string($connection,$_POST['skills']);
 
         //if($password_1==null){
            // $password_1=$password;
@@ -58,6 +59,7 @@
         SET username = '{$username}', email = '{$email}', phone='{$phone}', description='{$description}'
         WHERE email='{$email}'";
 
+        $query2="UPDATE tehnicalskills set skill='{$skills}";
         
 
         $result1=mysqli_query($connection,$query1);
@@ -277,6 +279,34 @@
                                         <input type="text" class="form-control mb-30" name="description"?>
                                     </div>
                                 </div>
+
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label>
+                                            <h6>skills</h6>
+                                        </label><br>
+                                        <input type="tel" class="form-control mb-30" name="skills" placeholder="add your skills">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <select class="form-control mb-30" name="period" class="select">
+                                        <option>Select percentage</option>
+                                        <option value="10">10%</option>
+                                        <option value="20">20%</option>
+                                        <option value="30">30%</option>
+                                        <option value="40">40%</option>
+                                        <option value="50">50%</option>
+                                        <option value="60">60%</option>
+                                        <option value="70">70%</option>
+                                        <option value="80">80%</option>
+                                        <option value="90">90%</option>
+                                        <option value="100">100%</option>
+                                        
+                
+                                    </select>
+                                 </div>
+
                                 <div class="col-12">
                                     <button class="btn uza-btn btn-3 mt-15" type="submit" name="update" value="Update" >Update</button>
                                 </div>
