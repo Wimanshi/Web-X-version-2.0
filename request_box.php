@@ -324,7 +324,6 @@ session_start();
         echo "</div>";
         echo "</div>";
     ?>
-    <!-- ***** Request Box Area End ***** -->
 
             <?php
             $query = "SELECT * FROM objreq";
@@ -360,6 +359,7 @@ session_start();
             //echo "location.reload();";
             //echo "</script>";
             ?>
+     <!-- ***** Request Box Area End ***** -->
 <!-- ***** Footer Area Start ***** -->
 <footer class="footer-area section-padding-80-0">
         <div class="container">
