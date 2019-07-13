@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_GET['type'])){
+$type= $_GET['type'];}
+$Islogged=false;
+
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,14 +131,19 @@
 
                             <!-- Profile -->
                             <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="./client-profile.php" class="btn uza-btn">Profile </a>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
-                            <div class="login-register-btn mx-3">
+
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
                                 <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
                             </div>
-                            <div class="login-register-btn mx-3">
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="register.php">Register<i class="icon_gift_alt"></i></a>
                             </div>
 
