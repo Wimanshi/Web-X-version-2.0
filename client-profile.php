@@ -231,7 +231,7 @@ $sss.=" ";
     
                                 <!-- Profile -->
                                 <div class="get-a-quote">
-                                    <a href="#" class="btn uza-btn">Box</a>
+                                    <a href="#" class="btn uza-btn">Request Box</a>
                                 </div>
 								<!-- Edit profile-->
 								<div class="get-a-quote">
