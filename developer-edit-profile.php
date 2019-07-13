@@ -49,6 +49,7 @@
         $phone=mysqli_real_escape_string($connection,$_POST['Phone']);
         $description=mysqli_real_escape_string($connection,$_POST['description']);
         $skills=mysqli_real_escape_string($connection,$_POST['skills']);
+        $percentage=mysqli_real_escape_string($connection,$_POST['percentage']);
 
         //if($password_1==null){
            // $password_1=$password;
@@ -59,10 +60,14 @@
         SET username = '{$username}', email = '{$email}', phone='{$phone}', description='{$description}'
         WHERE email='{$email}'";
 
-        $query2="UPDATE tehnicalskills set skill='{$skills}";
+        $query2="UPDATE tehnicalskills set skill='{$skills}', percentage='{$percentage}' where email='{$email}' and skill='{$skills}'";
+
+        $query3="INSERT INTO tehnicalskills (email,skill,percentage) values ('{$email}','{$skills}','{$percentage}')";
         
 
         $result1=mysqli_query($connection,$query1);
+        $result2=mysqli_query($connection,$query2);
+        $result3=mysqli_query($connection,$query3);
         if (!$result1){
             echo "update fail";
         }
@@ -290,7 +295,7 @@
                                 </div>
 
                                 <div class="col-lg-8">
-                                    <select class="form-control mb-30" name="period" class="select">
+                                    <select class="form-control mb-30" name="percentage" class="select">
                                         <option>Select percentage</option>
                                         <option value="10">10%</option>
                                         <option value="20">20%</option>
