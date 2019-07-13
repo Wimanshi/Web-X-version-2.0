@@ -71,10 +71,6 @@
 
 ?>
 
-
-
-<?php include('server.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -283,10 +279,6 @@
                                 <div class="col-12">
                                     <button class="btn uza-btn btn-3 mt-15" type="submit" name="update" value="Update" >Update</button>
                                 </div>
-
-                                <br>
-                                <p>Already a member? <a href="login.php">Login</a></p>
-
                             </div>
                         </form>
                     </div>
