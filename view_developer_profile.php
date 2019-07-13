@@ -254,14 +254,6 @@ $sss.=" ";
                                     </li>
                                     <li><a href="./contact.php">Contact</a></li>
                                 </ul>
-                                <!-- Profile -->
-                                <div class="get-a-quote">
-                                    <a href="./developer-edit-profile.php" class="btn uza-btn">Edit Profile</a>
-                                </div>
-                                <!-- Profile -->
-                                <div class="get-a-quote">
-                                    <a href="./view_request.php" class="btn uza-btn">View Request</a>
-                                </div>
                                 <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
                                     <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
