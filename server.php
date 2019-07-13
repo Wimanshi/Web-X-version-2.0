@@ -105,9 +105,8 @@
             $result2=mysqli_query($connection,$query2);
             if(mysqli_num_rows($result1)==1){
                 $user = mysqli_fetch_assoc($result1);
-
                 $client=new ClientAccount($user['username'],$user['email'],$user['password'],"client");
-
+                $type='client';
                 //$_SESSION['username'] = $user['username'];
                 $_SESSION['username']=$user['username'];
                 $_SESSION['email'] =$email;
@@ -117,7 +116,7 @@
                 $user11 = new User($user['username']);
                 HashList::setUsers($user11,$email);
 
-                header('location: index.php');
+                header('location: index.php?type=client');
             }
             if(mysqli_num_rows($result2)==1){
                 $user = mysqli_fetch_assoc($result2);
@@ -125,7 +124,7 @@
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['success'] = "You are now logged in";
                 
-                header('location: developer-profile.php');
+                header('location: index.php?type=developer');
             } 
             else{
                 array_push($errors1,"wrong username or password");
