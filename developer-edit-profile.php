@@ -8,6 +8,7 @@
     $username="";
     
     $errors=array();
+    $errors1=array();
     $type="";
     
 

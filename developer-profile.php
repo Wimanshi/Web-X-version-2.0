@@ -244,7 +244,7 @@ $sss.=" ";
     
                                 <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
-                                    <a href="login.php">Logout<i class="icon_lock_alt"></i></a>    
+                                    <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
                                 </div>
     
                                 <!-- Search Icon -->
