@@ -1,4 +1,6 @@
-<?php //include('includes/client-header.php');
+<?php
+session_start();
+//include('includes/client-header.php');
   require_once ('class.Database.php');
   require_once ('class.CancelState.php');
   require_once ('class.Request.php');
@@ -20,7 +22,8 @@
 <?php 
 	//checking if a user is logged in
 	if (!isset($_SESSION['username'])){
-		header('Location: index.php');
+        header('Location: index.php');
+        echo($_SESSION['username']);
     }
 
     $email=$_SESSION['email'];

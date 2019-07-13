@@ -298,7 +298,17 @@
                 <div class="team-sildes owl-carousel">
 
                     <!-- Single Team Slide -->
-                    <div class="single-team-slide">
+                    
+
+                    <!-- Single Team Slide -->
+                    
+                    
+
+                    <!-- Single Team Slide -->
+                    
+
+                    <!-- Single Team Slide -->
+                    <div class="new-team-slide">
                         <img src="./img/bg-img/Prabhanu.jpg" alt="">
                         <!-- Overlay Effect -->
                         <div class="overlay-effect">
@@ -317,7 +327,7 @@
                     </div>
 
                     <!-- Single Team Slide -->
-                    <div class="single-team-slide">
+                    <div class="new-team-slide">
                         <img src="./img/bg-img/Nadeesha.jpg" alt="">
                         <!-- Overlay Effect -->
                         <div class="overlay-effect">
@@ -336,64 +346,7 @@
                     </div>
 
                     <!-- Single Team Slide -->
-                    <div class="single-team-slide">
-                        <img src="./img/bg-img/Shashini.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h6>DESIGNER</h6>
-                            <h4>Shashini Abeywickrama</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="team-social-info">
-                            <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="linkedin" data-toggle="tooltip" data-placement="top" title="linkedIn"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Team Slide -->
-                    <div class="single-team-slide">
-                        <img src="./img/bg-img/Prabhanu.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h6>DESIGNER</h6>
-                            <h4>Prabhanu Gunaweera</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="team-social-info">
-                            <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="linkedin" data-toggle="tooltip" data-placement="top" title="linkedIn"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Team Slide -->
-                    <div class="single-team-slide">
-                        <img src="./img/bg-img/Nadeesha.jpg" alt="">
-                        <!-- Overlay Effect -->
-                        <div class="overlay-effect">
-                            <h6>DESIGNER</h6>
-                            <h4>Nadeesha Garusinghe</h4>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet gubergren no sea takimata sanctus est.</p>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="team-social-info">
-                            <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="linkedin" data-toggle="tooltip" data-placement="top" title="linkedIn"><i class="fa fa-linkedin"></i></a>
-                            <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Single Team Slide -->
-                    <div class="single-team-slide">
+                    <div class="new-team-slide">
                         <img src="./img/bg-img/Shashini.jpg" alt="">
                         <!-- Overlay Effect -->
                         <div class="overlay-effect">

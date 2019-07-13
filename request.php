@@ -171,7 +171,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                         <div class="contact-heading mb-50">
                             <h4>Please fill out the form below to send request.</h4>
                         </div>
-                        <form method="post" action="login.php">
+                        <form method="post" action="request.php">
                             <?php include('errors.php'); ?>
                             <div class="row">
                                 <div class="col-lg-8">

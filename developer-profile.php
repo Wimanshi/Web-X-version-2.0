@@ -240,12 +240,14 @@ $sss.=" ";
                                     </li>
                                     <li><a href="./contact.php">Contact</a></li>
                                 </ul>
-    
                                 <!-- Profile -->
                                 <div class="get-a-quote">
-                                    <a href="#" class="btn uza-btn">Box</a>
+                                    <a href="./developer-edit-profile.php" class="btn uza-btn">Edit Profile</a>
                                 </div>
-    
+                                <!-- Profile -->
+                                <div class="get-a-quote">
+                                    <a href="./view_request.php" class="btn uza-btn">View Request</a>
+                                </div>
                                 <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
                                     <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
@@ -301,8 +303,6 @@ $sss.=" ";
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
 							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
-							<p><a href="./developer-edit-profile.php" class="btn btn-default btn-lg">edit profile</a></p>
-							<p><a href="./view_request.php" class="btn btn-default btn-lg">View Requests</a></p>
 							<h1><span><?php echo $username;?></span></h1>
 							<h3><span><?php echo  $proffesion ?> </span></h3>
 							<p>
