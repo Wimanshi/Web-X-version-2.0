@@ -1,7 +1,6 @@
 <?php
 session_start();
 //include('includes/client-header.php');
-include('class.Request.php');
   require_once ('class.Database.php');
   require_once ('class.CancelState.php');
   require_once ('class.Request.php');
@@ -113,7 +112,7 @@ include('class.Request.php');
                             echo "</p>";
                             echo "<p>";
                                 echo "Status : ";
-                                //echo $req->returnState()->getState();
+                                echo $req->returnState()->getState();
                             echo "</p>";
                             echo "<p>";
                             echo "Developer Rating         :";
