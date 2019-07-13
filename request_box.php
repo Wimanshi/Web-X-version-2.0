@@ -228,6 +228,11 @@ session_start();
         $db = Database::getInstance();
         $connection = $db->getConnection();
         $result_set = mysqli_query($connection,$query);
+        if(mysqli_num_rows($result_set)==0){
+            echo"<h5><center><font size='6' color=#d6d6c2>";
+            echo"No requests yet &#9785;";
+            echo"</font></center></h5>";
+        }
 
         $list=array();
         while($row=mysqli_fetch_array($result_set,MYSQLI_ASSOC)){
@@ -246,7 +251,7 @@ session_start();
             //echo $req->getCTime();
             if($req->getClientEmail()==$email){
             $d_email=$req->getDevEmail();
-            echo "<div class='col-12 col-lg-5'>";
+            echo "<div class='col-12 col-lg-4'>";
                 echo "<div class='single-blog-post bg-img mb-80' style='background-image: url(./img/bg-img/8.jpg);'>";
                     echo "<div class='post-content'>";
                         echo "<a href='view_developer_profile.php?email=$d_email'>";

@@ -50,7 +50,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
     }else if($type=="GraphicDesigner"){
         $_SESSION['project_type']="Graphic Design";
     }else if($type=="VedioEditor"){
-        $_SESSION['project_type']="Video/Sort Film";
+        $_SESSION['project_type']="Video/Short Film";
     }
 
     $query12 = "SELECT * FROM objreq";    
