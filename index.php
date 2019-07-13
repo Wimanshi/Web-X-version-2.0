@@ -147,6 +147,12 @@ if (isset($_SESSION['email'])){
                                 <a href="register.php">Register<i class="icon_gift_alt"></i></a>
                             </div>
 
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_gift_alt"></i></a>
+                            </div>
+
                             <!-- Search Icon -->
                             <div class="search-icon" data-toggle="modal" data-target="#searchModal">
                                 <i class="icon_search"></i>
