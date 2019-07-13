@@ -117,7 +117,7 @@
                 $user11 = new User($user['username']);
                 HashList::setUsers($user11,$email);
 
-                header('location: index.php?type=client');
+                header('location: index.php');
             }
             if(mysqli_num_rows($result2)==1){
                 $user = mysqli_fetch_assoc($result2);
@@ -126,7 +126,7 @@
                 $_SESSION['success'] = "You are now logged in";
                 $_SESSION['userType']='developer';
                 
-                header('location: index.php?type=developer');
+                header('location: index.php');
             } 
             else{
                 array_push($errors1,"wrong username or password");

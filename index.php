@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_GET['type'])){
-$type= $_GET['type'];}
+
 $Islogged=false;
+$type=$_SESSION['userType'];
 
 if (isset($_SESSION['email'])){
     $Islogged=true;
