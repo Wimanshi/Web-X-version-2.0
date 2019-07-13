@@ -172,13 +172,11 @@
     
                                 <!-- Profile -->
                                 <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./indexProfile.php" class="btn uza-btn">Profile </a>
+                                    <a href="./client-profile.php" class="btn uza-btn">Profile </a>
                                 </div>
     
                                 <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
+                               
     
                                 <!-- Search Icon -->
                                 <div class="search-icon" data-toggle="modal" data-target="#searchModal">
