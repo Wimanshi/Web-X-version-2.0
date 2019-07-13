@@ -48,7 +48,7 @@
         //$password_2=mysqli_real_escape_string($connection,$_POST['password_2']);
         $phone=mysqli_real_escape_string($connection,$_POST['Phone']);
         $description=mysqli_real_escape_string($connection,$_POST['description']);
-        $skills=mysqli_real_escape_string($connection,$_POST['skills']);
+        $skills=strtoupper(mysqli_real_escape_string($connection,$_POST['skills']));
         $percentage=mysqli_real_escape_string($connection,$_POST['percentage']);
 
         //if($password_1==null){
@@ -62,12 +62,21 @@
 
         $query2="UPDATE tehnicalskills set skill='{$skills}', percentage='{$percentage}' where email='{$email}' and skill='{$skills}'";
 
-        $query3="INSERT INTO tehnicalskills (email,skill,percentage) values ('{$email}','{$skills}','{$percentage}')";
+        $query3="INSERT INTO tehnicalskills (email,skill,percentage) values ('$email','$skills','$percentage')";
+
+        $query4="SELECT * from tehnicalskills where email='{$email}' and skill='{$skills}' limit 1";
         
 
         $result1=mysqli_query($connection,$query1);
-        $result2=mysqli_query($connection,$query2);
-        $result3=mysqli_query($connection,$query3);
+        
+        $result4=mysqli_query($connection,$query4);
+        
+        if(mysqli_num_rows($result4)>0){
+            $result2=mysqli_query($connection,$query2);
+        }
+        else{
+            $result3=mysqli_query($connection,$query3);
+        }
         if (!$result1){
             echo "update fail";
         }
