@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once ('class.Database.php');
 ?>
 
@@ -132,12 +133,22 @@ require_once ('class.Database.php');
                             </div>
 
                             <!-- Login / Register -->
-                            <div class="login-register-btn mx-3">
-                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                            </div>
-                            <div class="login-register-btn mx-3">
-                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                            </div>
+                            <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
+                                echo "style='display:none'";
+                                }?>>
+                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                                </div>
+                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
+                                    echo"style='display:none'";
+                                }?>>
+                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                                </div>
+
+                                <div class="login-register-btn mx-3" <?php if(!(isset($_SESSION['username']))){
+                                    echo"style='display:none'";
+                                }?>>
+                                    <a href="logout.php">LogOut<i class="icon_gift_alt"></i></a>
+                                </div>
 
                             <!-- Search Icon -->
                             <div class="search-icon" data-toggle="modal" data-target="#searchModal">

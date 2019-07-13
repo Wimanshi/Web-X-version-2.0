@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,11 +126,21 @@
                                 </div>
     
                                 <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
+                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
+                                echo "style='display:none'";
+                                }?>>
                                     <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
                                 </div>
-                                <div class="login-register-btn mx-3">
+                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
+                                    echo"style='display:none'";
+                                }?>>
                                     <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                                </div>
+
+                                <div class="login-register-btn mx-3" <?php if(!(isset($_SESSION['username']))){
+                                    echo"style='display:none'";
+                                }?>>
+                                    <a href="logout.php">LogOut<i class="icon_gift_alt"></i></a>
                                 </div>
     
                                 <!-- Search Icon -->
