@@ -19,7 +19,7 @@ if (isset($_SESSION['email'])){
     $errors=array();
     $errors1=array();
     $type="";
-    
+    $Profilephoto='';
 
 
 
@@ -90,6 +90,29 @@ if (isset($_SESSION['email'])){
         if (!$result1){
             echo "update fail";
         }
+
+        $image = base64_encode(file_get_contents($_FILES['profilephoto']['tmp_name']));
+
+        $options = array('http'=>array(
+                'method'=>"POST",
+                'header'=>"Authorization: Bearer 0002b9333b51b98d99d31230ad6e404a035c9473\n".
+                "Content-Type: application/x-www-form-urlencoded",
+                'content'=>$image
+        ));
+
+        $context = stream_context_create($options);
+
+        $imgurURL = "https://api.imgur.com/3/image";
+
+        $response = file_get_contents($imgurURL, false, $context);
+        $response = json_decode($response);
+        $Profilephoto=$response->data->link;
+
+
+
+
+
+
        header('location: developer-profile.php');
         
     }
