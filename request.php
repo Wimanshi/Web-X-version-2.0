@@ -17,6 +17,8 @@ $username=$_SESSION['username'];
     $dev_name=$_SESSION['developer_name'];
     $dev_email=$_SESSION['developer_email'];
     $project_type=$_SESSION['project_type'];
+    $errors=array();
+    $errors1=array();
     //echo $_SESSION['project_type'];
 ?>
 
