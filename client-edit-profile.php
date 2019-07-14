@@ -21,6 +21,8 @@ if (isset($_SESSION['email'])){
     $errors=array();
     $errors1=array();
     $type="";
+    $Profilephoto='';
+
    
 
 
@@ -52,18 +54,39 @@ if (isset($_SESSION['email'])){
 
 
     if (isset($_POST['update'])){
+        $image = base64_encode(file_get_contents($_FILES['profilephoto']['tmp_name']));
+
+        $options = array('http'=>array(
+                'method'=>"POST",
+                'header'=>"Authorization: Bearer 0002b9333b51b98d99d31230ad6e404a035c9473\n".
+                "Content-Type: application/x-www-form-urlencoded",
+                'content'=>$image
+        ));
+
+        $context = stream_context_create($options);
+
+        $imgurURL = "https://api.imgur.com/3/image";
+
+        $response = file_get_contents($imgurURL, false, $context);
+        $response = json_decode($response);
+        
+
+        echo($response->data->link);
         
         //$username=mysqli_real_escape_string($db,$_POST['username']);
         $email=mysqli_real_escape_string($connection,$_POST['email']);
         
         $phone=mysqli_real_escape_string($connection,$_POST['Phone']);
+        $Profilephoto=mysqli_real_escape_string($connection,$_POST['profilephoto']);
+
+        $Profilephoto=$response->data->link;
 
 
         
         //$type=mysqli_real_escape_string($db,$_POST['type']);
         
         $query1="UPDATE client
-        SET username = '{$username}', email = '{$email}', phone='{$phone}'
+        SET username = '{$username}', email = '{$email}', phone='{$phone}',profilephoto='{$Profilephoto}'
         WHERE email='{$email}'";
 
         
@@ -251,7 +274,7 @@ if (isset($_SESSION['email'])){
                         <div class="contact-heading mb-50">
                             <h4>Update your profile</h4>
                         </div>
-                        <form method="post" action="client-edit-profile.php">
+                        <form method="post" action="client-edit-profile.php" enctype="multipart/form-data">
                             <?php include('errors.php'); ?>
                             <div class="row">
                                 <div class="col-lg-8">
@@ -286,6 +309,17 @@ if (isset($_SESSION['email'])){
                                         <input type="tel" class="form-control mb-30" pattern="[0]{1}[0-9]{9}" name="Phone" value=<?php echo $phone;?>>
                                     </div>
                                 </div>
+
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label>
+                                            <h6>Profile Photo</h6>
+                                        </label><br>
+                                        <input type="file" name="profilephoto" accept="image/x-png,image/jpeg">
+                                    </div>
+                                </div>
+
+
                                 <div class="col-12">
                                     <button class="btn uza-btn btn-3 mt-15" type="submit" name="update" value="Update" >Update</button>
                                 </div>

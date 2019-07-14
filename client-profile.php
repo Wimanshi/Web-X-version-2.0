@@ -38,6 +38,7 @@ require_once ('class.hashlist.php');
         //$proffesion = $user['profession'];
         //$linkedin = $user['linkedIn'];
         $ranking = $user['ranking'];
+        $profpic=$user['profilephoto'];
         //$image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['profile_photo']).'" height="200" width = "200"/>';
     }
     //verify_query($result_set);
@@ -306,7 +307,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<div class="profile-thumb" style="background: url(<?php echo($profpic) ?>);"></div>
 						
                             <h1><span><?php echo $username;?></span></h1>
                             <p class="proile-rating"><b>Rating : </b><span><?php echo $sss;
