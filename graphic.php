@@ -113,7 +113,7 @@ require_once ('class.Database.php');
                                         </li>
                                         <li><a href="./portfolio.php">- Portfolio</a></li>
                                         <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./contact.php">- Contact</a></li>
+                                      
                                     </ul>
                                 </li>
                                 <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -128,12 +128,12 @@ require_once ('class.Database.php');
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.php">Contact</a></li>
+                               
                             </ul>
 
                             <!-- Profile -->
                             <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
