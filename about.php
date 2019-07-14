@@ -1,5 +1,11 @@
 <?php
 session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +82,7 @@ session_start();
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
@@ -106,7 +112,7 @@ session_start();
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
-                                    <li><a href="./about.php">About</a></li>
+                                    <li class="current-item"><a href="./about.php">About</a></li>
                                     <li><a href="#">DeveloperList</a>
                                         <ul class="dropdown">
                                             <li><a href="./allDevelopers.php">- All Developers</a></li>
@@ -154,6 +160,16 @@ session_start();
                     </nav>
                 </div>
             </div>
+            <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
         </header>
         <!-- ***** Header Area End ***** -->
 

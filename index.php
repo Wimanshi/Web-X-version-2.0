@@ -1,11 +1,10 @@
 <?php
 session_start();
-
 $Islogged=false;
-$type=$_SESSION['userType'];
-
 if (isset($_SESSION['email'])){
     $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
 }
 ?>
 
@@ -150,7 +149,7 @@ if (isset($_SESSION['email'])){
                             <div class="login-register-btn mx-3" <?php if(!$Islogged){
                                 echo"style='display:none'";
                             }?>>
-                                <a href="logout.php">LogOut</a>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
                             </div>
 
                             <!-- Search Icon -->
@@ -162,11 +161,23 @@ if (isset($_SESSION['email'])){
 
                     </div>
                 </nav>
+                
             </div>
+            <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
         </div>
+        
     </header>
     <!-- ***** Header Area End ***** -->
-
+    
     <!-- ***** Welcome Area Start ***** -->
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
@@ -264,7 +275,7 @@ if (isset($_SESSION['email'])){
         </div>
     </section>
     <!-- ***** Welcome Area End ***** -->
-
+    
     <!-- ***** About Us Area Start ***** -->
     <section class="uza-about-us-area">
         <div class="container">
@@ -274,10 +285,6 @@ if (isset($_SESSION['email'])){
                 <div class="col-12 col-md-6">
                     <div class="about-us-thumbnail mb-80">
                         <img src="./img/bg-img/2.jpg" alt="">
-                        <!-- Video Area -->
-                        <div class="uza-video-area hi-icon-effect-8">
-                            <a href="https://www.youtube.com/watch?v=sSakBz_eYzQ" class="hi-icon video-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-                        </div>
                     </div>
                 </div>
 
