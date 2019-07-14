@@ -483,11 +483,11 @@ $sss.=" ";
 
                         <!-- Footer Content -->
                         <div class="footer-content mb-15">
-                        <h3>2 729 729</h3>
-                        <p>University of Moratuwa <br> connectin@gmail.com</p>
-                    </div>
-                    <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
-                        Closed on Weekends</p>
+                                <h3>2 729 729</h3>
+                                <p>University of Moratuwa <br> connectin@gmail.com</p>
+                            </div>
+                            <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
+                                Closed on Weekends</p>
                     </div>
                 </div>
 

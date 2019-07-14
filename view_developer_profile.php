@@ -47,6 +47,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
     $proffesion = $user['developer_type'];
     //$linkedIn = $user['linkedin'];
     $ranking =(int) $user['ranking'];
+    $profpic=$user['profilephoto'];
     //$image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['Profile_Photo']).'" height="200" width = "200"/>';
     $_SESSION['developer_name']=$username;
     $_SESSION['developer_email']=$email;
@@ -345,7 +346,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<div class="profile-thumb" style="background: url(<?php echo($profpic);?>);"></div>
 							<!--<p><a href="./request.php" class="btn btn-default btn-lg">Send Request</a></p>-->
 							
 							<h1><span><?php echo $username;?></span></h1>
@@ -503,11 +504,11 @@ $sss.=" ";
 
                         <!-- Footer Content -->
                         <div class="footer-content mb-15">
-                        <h3>2 729 729</h3>
-                        <p>University of Moratuwa <br> connectin@gmail.com</p>
-                    </div>
-                    <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
-                        Closed on Weekends</p>
+                                <h3>2 729 729</h3>
+                                <p>University of Moratuwa <br> connectin@gmail.com</p>
+                            </div>
+                            <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
+                                Closed on Weekends</p>
                     </div>
                 </div>
 
