@@ -50,6 +50,7 @@
         $description=mysqli_real_escape_string($connection,$_POST['description']);
         $skills=strtoupper(mysqli_real_escape_string($connection,$_POST['skills']));
         $percentage=mysqli_real_escape_string($connection,$_POST['percentage']);
+        $Profilephoto=mysqli_real_escape_string($connection,$_POST['profilephoto']);
 
         //if($password_1==null){
            // $password_1=$password;
@@ -57,7 +58,7 @@
         //$type=mysqli_real_escape_string($db,$_POST['type']);
         
         $query1="UPDATE developer
-        SET username = '{$username}', email = '{$email}', phone='{$phone}', description='{$description}'
+        SET username = '{$username}', email = '{$email}', phone='{$phone}', description='{$description}',profilephoto='{$Profilephoto}'
         WHERE email='{$email}'";
 
         $query2="UPDATE tehnicalskills set skill='{$skills}', percentage='{$percentage}' where email='{$email}' and skill='{$skills}'";
@@ -291,6 +292,15 @@
                                             <h6>Description</h6>
                                         </label><br>
                                         <input type="text" class="form-control mb-30" name="description"?>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="form-group">
+                                        <label>
+                                            <h6>Profile Photo</h6>
+                                        </label><br>
+                                        <input type="file" name="profilephoto" accept="image/x-png,image/jpeg">
                                     </div>
                                 </div>
 
