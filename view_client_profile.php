@@ -25,6 +25,7 @@ $d_email=$_GET['email'];
     $user= mysqli_fetch_assoc($result_set);
     $name = $user['username'];
     $email = $user['email'];
+    $profpic=$user['profilephoto'];
     
     //$user = mysqli_fetch_assoc($result_set);
     $phone = $user['phone'];
@@ -312,7 +313,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<div class="profile-thumb" style="background: url(<?php echo($profpic); ?>);"></div>
 							<!--<p><a href="./request.php" class="btn btn-default btn-lg">Send Request</a></p>-->
 							
 							<h1><span><?php echo $username;?></span></h1>
