@@ -463,12 +463,14 @@ $sss.=" ";
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Hire Me!</h2>
+                    <h2>Hire Me!</h2>
+                    <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
 					<?php
 						if($_SESSION['userType']=='client'){
-							echo("<p><a href='./request.php' class='btn btn-default btn-lg'>Send Request</a></p>");
+							echo("<a href='./request.php' class='btn uza-btn'>Send Request</a>");
 						}
-					?>
+                    ?>
+                    </div>
 				</div>
 			</div>
 		</div>
