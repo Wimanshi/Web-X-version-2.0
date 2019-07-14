@@ -83,7 +83,7 @@ require_once ('class.Database.php');
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="current-item"><a href="./index.php">Home</a></li>
+                                <li><a href="./index.php">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="./index.php">- Home</a></li>
@@ -97,7 +97,7 @@ require_once ('class.Database.php');
                                                         <li><a href="./android.php">- Android Developing</a></li>
                                                         <li><a href="./graphic.php">- Graphic Designing</a></li>
                                                         <li><a href="./ios.php">- iOS Developing</a></li>
-                                                        <li><a href="./website.php">- Website Developing</a></li>
+                                                        <li class="current-item"><a href="./website.php">- Website Developing</a></li>
                                                         <li><a href="./video.php">- Video Editing</a></li>
                                                     </ul>
                                                 </li>
@@ -120,7 +120,7 @@ require_once ('class.Database.php');
                                         <li><a href="./android.php">- Android Developing</a></li>
                                         <li><a href="./graphic.php">- Graphic Designing</a></li>
                                         <li><a href="./ios.php">- iOS Developing</a></li>
-                                        <li><a href="./website.php">- Website Developing</a></li>
+                                        <li class="current-item"><a href="./website.php">- Website Developing</a></li>
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
@@ -174,6 +174,7 @@ require_once ('class.Database.php');
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="#"> DeveloperList</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Website Developing</li>
                             </ol>
                         </nav>

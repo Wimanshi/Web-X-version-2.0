@@ -197,7 +197,7 @@ $sss.=" ";
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
@@ -242,7 +242,7 @@ $sss.=" ";
                                 </ul>
                                 <!-- Profile -->
                                 <div class="get-a-quote">
-                                    <a href="./developer-edit-profile.php" class="btn uza-btn">Edit Profile</a>
+                                    <a href="./developer-edit-profile.php" class="btn uza-btn">Update Profile</a>
                                 </div>
                                 <!-- Profile -->
                                 <div class="get-a-quote">

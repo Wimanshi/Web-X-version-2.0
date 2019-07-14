@@ -87,7 +87,7 @@ $username=$_SESSION['username'];
                                 <li class="current-item"><a href="./index.php">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./index.php">- Home</a></li>
+                                        <li class="current-item"><a href="./index.php">- Home</a></li>
                                         <li><a href="./start exploring.php">- Start Exploring</a></li>
                                         <li><a href="./about.php">- About</a></li>
                                         <li><a href="./services.php">- Services</a></li>

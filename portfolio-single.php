@@ -73,7 +73,7 @@
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
@@ -96,7 +96,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
+                                            <li class="current-item"><a href="./portfolio-single.php">- Single Portfolio</a></li>
                                             <li><a href="./blog.php">- Blog</a></li>
                                             <li><a href="./single-blog.php">- Blog Details</a></li>
                                             <li><a href="./contact.php">- Contact</a></li>
