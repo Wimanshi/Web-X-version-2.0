@@ -302,7 +302,7 @@ $username=$_SESSION['username'];
                                 $num=$row['id'];
                                 echo "<form name='row' action='view_request.php' method=post>";
                                 echo "<select name='rate'>";
-                                echo "<option>Rate Developer</option>";
+                                echo "<option>Rate Client</option>";
                                 echo "<option value='1'>1</option>";
                                 echo "<option value='2'>2</option>";
                                 echo "<option value='3'>3</option>";

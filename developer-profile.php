@@ -227,7 +227,12 @@ $sss.=" ";
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
+<<<<<<< HEAD
+                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
+                                          
+=======
                                             <li><a href="./portfolio-single.php">- Single Portfolio</a></li> 
+>>>>>>> efa9b426c32c2b2169c620c5cace3ed1c63cbc7c
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -241,7 +246,12 @@ $sss.=" ";
                                             <li><a href="./website.php">- Website Developing</a></li>
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
+<<<<<<< HEAD
+                                    </li>
+                                 
+=======
                                     </li> 
+>>>>>>> efa9b426c32c2b2169c620c5cace3ed1c63cbc7c
                                 </ul>
                                 <!-- Profile -->
                             <div class="get-a-quote">
@@ -329,7 +339,10 @@ $sss.=" ";
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
 							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
 							<h1><span><?php echo $username;?></span></h1>
-							<h3><span><?php echo  $proffesion ?> </span></h3>
+                            <h3><span><?php echo  $proffesion ?> </span></h3>
+                            <p class="proile-rating"><b>Rating : </b><span><?php echo $sss;
+                                    echo $rate;
+                                    ?></span></p>
 							<p>
 								<ul class="fh5co-social-icons">
 									<li><a href="#"><i class="icon-twitter2"></i></a></li>
