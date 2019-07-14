@@ -37,26 +37,26 @@
         $result1=mysqli_query($connection,$query1);
 
         if(mysqli_num_rows($result1)>0){
-            array_push($errors1,"E-mail is already exist.Use another e-mail and try");
+            array_push($errors1,"<font color=red>E-mail is already exist.Use another e-mail and try</font>");
         }
         if(empty($username)){
-            array_push($errors1,"User name is required");
+            array_push($errors1,"<font color=red>User name is required</font>");
         }
         if(empty($email)){
-            array_push($errors1,"User email is required");
+            array_push($errors1,"<font color=red>User email is required</font>");
         }
         if(empty($password_1)){
-            array_push($errors1,"Password is required");
+            array_push($errors1,"<font color=red>Password is required</font>");
         }
         if($password_1 != $password_2){
-             array_push($errors1,"two passwords are not match");
+             array_push($errors1,"<font color=red>two passwords are not match</font>");
         }
         if($type=="Select Type"){
-            array_push($errors1,"select the type of user");
+            array_push($errors1,"<font color=red>select the type of user</font>");
         }
         if($type=='developer'){
             if($field=='Select Field'){
-                array_push($errors1,"select the type of developer");
+                array_push($errors1,"<font color=red>select the type of developer</font>");
             }
         }
         if(count($errors1)==0){
@@ -92,10 +92,10 @@
         $password=mysqli_real_escape_string($connection,$_POST['password']);
 
         if(empty($email)){
-            array_push($errors1,"E-mail name is required");
+            array_push($errors1,"<font color=red>E-mail is required</font>");
         }
         if(empty($password)){
-            array_push($errors1,"Password is required");
+            array_push($errors1,"<font color=red>Password is required</font>");
         }
         if(count($errors1)==0){
             $password=md5($password);
@@ -129,7 +129,7 @@
                 header('location: index.php');
             } 
             else{
-                array_push($errors1,"wrong username or password");
+                array_push($errors1,"<font color=red>wrong username or password</font>");
                 //header('location:login.php');
             }
         }
@@ -164,28 +164,28 @@
         
 
         if(empty($clientName)){
-            array_push($errors,"Client's name is required");
+            array_push($errors,"<font color=red>Client's name is required</font>");
         }
         if(empty($clientEmail)){
-            array_push($errors,"Client's email is required");
+            array_push($errors,"<font color=red>Client's email is required</font>");
         }
         if(empty($devName)){
-            array_push($errors,"Developer's name is required");
+            array_push($errors,"<font color=red>Developer's name is required</font>");
         }
         if(empty($devEmail)){
-             array_push($errors,"Developer's email is required");
+             array_push($errors,"<font color=red>Developer's email is required</font>");
         }
         if(empty($description)){
-            array_push($errors,"description is required");
+            array_push($errors,"<font color=red>description is required</font>");
         }
         if(empty($deuration)){
-            array_push($errors,"duration is required");   
+            array_push($errors,"<font color=red>duration is required</font>");   
         }
-        if($deuration=="Select Duration"){
+        if($deuration=="<font color=red>Select Duration</font>"){
             array_push($errors,"select a duration");
         }
-        if($reqType=="Select Type of the project"){
-            array_push($errors,"type of the project is required");
+        if($reqType=="<font color=red>Select Type of the project</font>"){
+            array_push($errors,"<font color=red>type of the project is required</font>");
         }
         if(count($errors)==0){
             $request=new Request(1,$clientEmail,$clientName,$devEmail,$devName,$deuration,$description,$reqType);
