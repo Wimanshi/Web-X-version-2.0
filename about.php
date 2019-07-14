@@ -205,10 +205,6 @@ $username=$_SESSION['username'];
                 <div class="col-12 col-lg-6">
                     <div class="about-us-thumbnail mb-80">
                         <img src="./img/bg-img/2.jpg" alt="">
-                        <!-- Video Area -->
-                        <div class="uza-video-area hi-icon-effect-8">
-                            <a href="https://www.youtube.com/watch?v=sSakBz_eYzQ" class="hi-icon video-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -241,7 +237,7 @@ $username=$_SESSION['username'];
                                     <div class="tab-content-text">
                                         <p>Our mission is to enhancing the business growth of our customers with creative Design and Development to deliver market-defining high-quality solutions that create value and reliable competitive advantage for our clients around the world.</p>
                                         <p>Our mission is to deliver optimal solutions with quality and services at reasonable prices. For us customer satisfaction is given top place. We are very friendly in our dealings to the customers and it helps us retain existing clients and expand customer circle. We always try to improve the quality of our products by exploring innovative ideas.</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
 
@@ -249,7 +245,7 @@ $username=$_SESSION['username'];
                                     <!-- Tab Content Text -->
                                     <div class="tab-content-text">
                                         <p>We create solutions for real life problems or a business problems, makes a business out of it, and create an enterprise which runs a business by providing a software solution for a business problem.</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
 
@@ -257,7 +253,7 @@ $username=$_SESSION['username'];
                                     <!-- Tab Content Text -->
                                     <div class="tab-content-text">
                                             <p>Our ultimate goal as a team is to make a positive contribution in the lives of others by helping them achieve their goals through the software we create.Our mission represents the steps involved in achieving this goal</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
                             </div>
