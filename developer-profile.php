@@ -45,6 +45,7 @@ require_once ('class.Database.php');?>
         $linkedIn = $user['linkedIn'];
         $ranking = (int)$user['ranking'];
         $description = $user['description'];
+        $profilepic=$user['profilephoto'];
 
 
         $query12 = "SELECT * FROM objreq";    
@@ -327,7 +328,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<div class="profile-thumb" style="background: url(<?php echo($profilepic); ?>);"></div>
 							<h1><span><?php echo $username;?></span></h1>
                             <h3><span><?php echo  $proffesion ?> </span></h3>
                             <p class="proile-rating"><b>Rating : </b><span><?php echo $sss;
