@@ -50,6 +50,24 @@ if (isset($_SESSION['email'])){
 
 
     if (isset($_POST['update'])){
+        $image = base64_encode(file_get_contents($_FILES['profilephoto']['tmp_name']));
+
+        $options = array('http'=>array(
+                'method'=>"POST",
+                'header'=>"Authorization: Bearer 0002b9333b51b98d99d31230ad6e404a035c9473\n".
+                "Content-Type: application/x-www-form-urlencoded",
+                'content'=>$image
+        ));
+
+        $context = stream_context_create($options);
+
+        $imgurURL = "https://api.imgur.com/3/image";
+
+        $response = file_get_contents($imgurURL, false, $context);
+        $response = json_decode($response);
+        
+
+        echo($response->data->link);
         
         $username=mysqli_real_escape_string($connection,$_POST['username']);
         $email=mysqli_real_escape_string($connection,$_POST['email']);
@@ -60,6 +78,7 @@ if (isset($_SESSION['email'])){
         $skills=strtoupper(mysqli_real_escape_string($connection,$_POST['skills']));
         $percentage=mysqli_real_escape_string($connection,$_POST['percentage']);
         $Profilephoto=mysqli_real_escape_string($connection,$_POST['profilephoto']);
+        $Profilephoto=$response->data->link;
 
         //if($password_1==null){
            // $password_1=$password;
@@ -90,23 +109,6 @@ if (isset($_SESSION['email'])){
         if (!$result1){
             echo "update fail";
         }
-
-        $image = base64_encode(file_get_contents($_FILES['profilephoto']['tmp_name']));
-
-        $options = array('http'=>array(
-                'method'=>"POST",
-                'header'=>"Authorization: Bearer 0002b9333b51b98d99d31230ad6e404a035c9473\n".
-                "Content-Type: application/x-www-form-urlencoded",
-                'content'=>$image
-        ));
-
-        $context = stream_context_create($options);
-
-        $imgurURL = "https://api.imgur.com/3/image";
-
-        $response = file_get_contents($imgurURL, false, $context);
-        $response = json_decode($response);
-        $Profilephoto=$response->data->link;
 
 
 
@@ -305,7 +307,7 @@ if (isset($_SESSION['email'])){
                         <div class="contact-heading mb-50">
                             <h4>Update your profile</h4>
                         </div>
-                        <form method="post" action="developer-edit-profile.php">
+                        <form method="post" action="developer-edit-profile.php" enctype="multipart/form-data">
                             <?php include('errors.php'); ?>
                             <div class="row">
                                 <div class="col-lg-8">
