@@ -227,8 +227,7 @@ $sss.=" ";
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li> 
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -242,8 +241,7 @@ $sss.=" ";
                                             <li><a href="./website.php">- Website Developing</a></li>
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
-                                    </li>
-                                    <li><a href="./contact.php">Contact</a></li>
+                                    </li> 
                                 </ul>
                                 <!-- Profile -->
                                 <div class="get-a-quote">

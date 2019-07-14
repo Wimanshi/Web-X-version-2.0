@@ -102,16 +102,12 @@ $username=$_SESSION['username'];
                                                         <li><a href="./video.php">- Video Editing</a></li>
                                                     </ul>
                                                 </li>
-                                                <!--li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li-->
                                             </ul>
                                         </li>
                                         <li><a href="./portfolio.php">- Portfolio</a></li>
                                         <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./contact.php">- Contact</a></li>
                                     </ul>
                                 </li>
-                                <!--li><a href="./portfolio.php">Portfolio</a></li-->
                                 <li><a href="./about.php">About</a></li>
                                 <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
@@ -123,16 +119,16 @@ $username=$_SESSION['username'];
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.php">Contact</a></li>
                             </ul>
 
                             <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
-
                             <div class="login-register-btn mx-3" <?php if($Islogged){
                                 echo "style='display:none'";
                             }?>>

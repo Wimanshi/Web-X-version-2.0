@@ -105,8 +105,7 @@ $username=$_SESSION['username'];
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li> 
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -121,7 +120,6 @@ $username=$_SESSION['username'];
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./contact.php">Contact</a></li>
                                 </ul>
     
                                 <!-- Profile -->
