@@ -96,23 +96,15 @@
                                     </li>
                                  
                                 </ul>
-    
-                                <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./indexProfile.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                                <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
                             </div>
-                            <!-- Nav End -->
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>
@@ -323,16 +315,8 @@
                     <!-- Nav -->
                     <nav>
                     <ul class="our-link">
-                                <li><a href="about.php">About Us</a></li>
-                                <li <?php if($Islogged){
-                                echo "style='display:none'";
-                            }?>><a href="register.php">Forum Registeration</a></li>
-                                <li <?php if($Islogged){
-                                echo "style='display:none'";
-                            }?>><a href="login.php">Forum LogIn</a></li>
-                            <li <?php if(!$Islogged){
-                                echo"style='display:none'";
-                            }?>><a href="logout.php">LogOut</a></li>
+                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="login.php">Forum LogIn</a></li>
                             </ul>
                     </nav>
                 </div>

@@ -133,15 +133,28 @@ $username=$_SESSION['username'];
                             </ul>
 
                             <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
 
-
-                            <div class="login-register-btn mx-3">
-                                <a href="logout.php">LogOut</a>
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
                             </div>
 
                             <!-- Search Icon -->

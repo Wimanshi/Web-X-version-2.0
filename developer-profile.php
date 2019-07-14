@@ -244,24 +244,36 @@ $sss.=" ";
                                     </li> 
                                 </ul>
                                 <!-- Profile -->
-                                <div class="get-a-quote">
-                                    <a href="./developer-edit-profile.php" class="btn uza-btn">Update Profile</a>
-                                </div>
-                                <!-- Profile -->
-                                <div class="get-a-quote">
-                                    <a href="./view_request.php" class="btn uza-btn">View Request</a>
-                                </div>
-                                <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
-                                    <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
-                                </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                            <div class="get-a-quote">
+                                <a href="./developer-edit-profile.php" class="btn uza-btn">Update Profile</a>
                             </div>
-                            <!-- Nav End -->
+                            <div class="get-a-quote">
+                                <a href="./view_request.php" class="btn uza-btn">View Request</a>
+                            </div>
+                            <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
+
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>

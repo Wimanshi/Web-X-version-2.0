@@ -122,14 +122,14 @@ $username=$_SESSION['username'];
                                     </li>
                                    
                                 </ul>
-    
-                                <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                            <!-- Profile -->
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
-
                             <div class="login-register-btn mx-3" <?php if($Islogged){
                                 echo "style='display:none'";
                             }?>>
@@ -146,13 +146,13 @@ $username=$_SESSION['username'];
                             }?>>
                                 <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
                             </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
                             </div>
-                            <!-- Nav End -->
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>

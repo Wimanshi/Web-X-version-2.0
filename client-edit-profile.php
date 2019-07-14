@@ -2,13 +2,18 @@
 <?php
 session_start();
 $Islogged=false;
+
 if (isset($_SESSION['email'])){
     $Islogged=true;
     $type=$_SESSION['userType'];
-$username=$_SESSION['username'];
+    $username=$_SESSION['username'];
+    $email=$_SESSION['email'];
+    $query = "SELECT * FROM client WHERE email= '{$email}' LIMIT 1";
+}else{
+    header('location: index.php');
 }
     require_once ('class.Database.php');
-    $email=$_SESSION['email'];
+    
     
     
     $username="";
@@ -20,7 +25,7 @@ $username=$_SESSION['username'];
 
 
 
-    $query = "SELECT * FROM client WHERE email= '{$email}' LIMIT 1";
+    
     $db = Database::getInstance();
     $connection = $db->getConnection();
    
@@ -180,7 +185,9 @@ $username=$_SESSION['username'];
                                 </div>
     
                                 <!-- Login / Register -->
-                               
+                                <div class="login-register-btn mx-3">
+                                    <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
+                                </div>
     
                                 <!-- Search Icon -->
                                 <div class="search-icon" data-toggle="modal" data-target="#searchModal">

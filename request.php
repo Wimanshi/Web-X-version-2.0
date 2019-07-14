@@ -126,18 +126,36 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                 </ul>
     
                                 <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                               
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
-                            <!-- Nav End -->
+
+                            <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
+
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>
