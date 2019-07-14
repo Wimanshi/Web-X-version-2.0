@@ -185,7 +185,7 @@ $sss.=" ";
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
@@ -235,7 +235,7 @@ $sss.=" ";
                                 </div>
 								<!-- Edit profile-->
 								<div class="get-a-quote">
-                                    <a href="./client-edit-profile.php" class="btn uza-btn">edit profile</a>
+                                    <a href="./client-edit-profile.php" class="btn uza-btn">Update profile</a>
                                 </div>
                                 <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
@@ -356,6 +356,7 @@ $sss.=" ";
 	<!-- ***** Profile Area End ***** -->
 
     <!-- ***** Footer Area Start ***** -->
+    <hr>
     <footer class="footer-area section-padding-80-0">
         <div class="container">
             <div class="row justify-content-between">

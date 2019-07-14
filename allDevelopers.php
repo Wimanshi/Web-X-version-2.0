@@ -120,9 +120,9 @@ require_once ('class.Database.php');
                                 </li>
                                 <!--li><a href="./portfolio.php">Portfolio</a></li-->
                                 <li><a href="./about.php">About</a></li>
-                                <li class="current-item"><a href="#">DeveloperList</a>
+                                <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
-                                        <li><a href="./allDevelopers.php">- All Developers</a></li>
+                                        <li class="current-item"><a href="./allDevelopers.php">- All Developers</a></li>
                                         <li><a href="./android.php">- Android Developing</a></li>
                                         <li><a href="./graphic.php">- Graphic Designing</a></li>
                                         <li><a href="./ios.php">- iOS Developing</a></li>
@@ -190,6 +190,7 @@ require_once ('class.Database.php');
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="#"> DeveloperList</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">All Developers</li>
                             </ol>
                         </nav>
