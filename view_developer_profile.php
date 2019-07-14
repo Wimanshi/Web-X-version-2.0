@@ -379,7 +379,7 @@ $sss.=" ";
 						<li><span class="first-block">Phone:</span><span class="second-block"><?php echo $phone ?></span></li>
 						<li><span class="first-block">Email:</span><span class="second-block"><?php echo $email ?></span></li>
 						<li><span class="first-block">profession:</span><span class="second-block"><?php echo $proffesion ?></span></li>
-						<!--<li><span class="first-block">linkedIn:</span><span class="second-block"><?php echo $linkedIn ?></span></li>-->
+						<li><span class="first-block">linkedIn:</span><span class="second-block"><?php echo $linkedIn ?></span></li>
 					</ul>
 				</div>
 				<div class="col-md-8">

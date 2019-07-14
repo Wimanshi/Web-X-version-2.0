@@ -1,5 +1,5 @@
+<?php include('server.php') ?>
 <?php
-session_start();
 $Islogged=false;
 if (isset($_SESSION['email'])){
     $Islogged=true;
