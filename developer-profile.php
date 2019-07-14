@@ -381,6 +381,9 @@ $sss.=" ";
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Skills</h2>
+                </div>
+                <div class="col-md-8 col-md-offset-2 text-center">
+					<h2>Skills</h2>
 				</div>
 			</div>
 			<div class="row row-pb-md">
@@ -535,11 +538,11 @@ $sss.=" ";
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
                         <h4 class="widget-title">About Us</h4>
-                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
+                        <p>We are a resourcefull team who interested to working with teams.</p>
 
                         <!-- Copywrite Text -->
                         <div class="copywrite-text mb-30">
-                            <p>&copy; Copyright 2018 <a href="#">Colorlib</a>.</p>
+                            <p>&copy; Copyright 2019 <a href="#">Web-X team</a>.</p>
                         </div>
 
                         <!-- Social Info -->
@@ -555,12 +558,12 @@ $sss.=" ";
 
             </div>
 
- <div class="row" style="margin-bottom: 30px;">
+            <div class="row" style="margin-bottom: 30px;">
                 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </div>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://Web-X.com" target="_blank">Web-X</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
 
         </div>
     </footer>

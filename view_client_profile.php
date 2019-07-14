@@ -32,6 +32,7 @@ $d_email=$_GET['email'];
     $user= mysqli_fetch_assoc($result_set);
     $name = $user['username'];
     $email = $user['email'];
+    $profpic=$user['profilephoto'];
     
     //$user = mysqli_fetch_assoc($result_set);
     $phone = $user['phone'];
@@ -308,7 +309,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
 						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(profilePic.jpg);"></div>
+							<div class="profile-thumb" style="background: url(<?php echo($profpic); ?>);"></div>
 							<!--<p><a href="./request.php" class="btn btn-default btn-lg">Send Request</a></p>-->
 							
 							<h1><span><?php echo $name;?></span></h1>
@@ -427,12 +428,12 @@ $sss.=" ";
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
                         <h4 class="widget-title">About Us</h4>
-                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
+                    <p>We are a resourcefull team who interested to working with teams.</p>
 
-                        <!-- Copywrite Text -->
-                        <div class="copywrite-text mb-30">
-                            <p>&copy; Copyright 2018 <a href="#">Colorlib</a>.</p>
-                        </div>
+                    <!-- Copywrite Text -->
+                    <div class="copywrite-text mb-30">
+                        <p>&copy; Copyright 2019 <a href="#">Web-X team</a>.</p>
+                    </div>
 
                         <!-- Social Info -->
                         <div class="footer-social-info">
@@ -450,7 +451,7 @@ $sss.=" ";
  <div class="row" style="margin-bottom: 30px;">
                 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://Web-X.com" target="_blank">Web-X</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
 
