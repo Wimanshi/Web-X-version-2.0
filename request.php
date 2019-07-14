@@ -17,8 +17,7 @@ $username=$_SESSION['username'];
     $dev_name=$_SESSION['developer_name'];
     $dev_email=$_SESSION['developer_email'];
     $project_type=$_SESSION['project_type'];
-    $errors=array();
-    $errors1=array();
+    
     //echo $_SESSION['project_type'];
 ?>
 
@@ -262,7 +261,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
 
                                 <div class="col-lg-8">
-                                    <select class="form-control mb-30" name="period" class="select">
+                                    <select class="form-control mb-30" name="period" class="select" >
                                         <option>Select Duration</option>
                                         <option value="3 days">3 days</option>
                                         <option value="5 days">5 days</option>

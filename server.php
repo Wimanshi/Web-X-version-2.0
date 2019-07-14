@@ -181,8 +181,8 @@
         if(empty($deuration)){
             array_push($errors,"<font color=red>duration is required</font>");   
         }
-        if($deuration=="<font color=red>Select Duration</font>"){
-            array_push($errors,"select a duration");
+        if($deuration=="Select Duration"){
+            array_push($errors,"<font color=red>select a duration</font>");
         }
         if($reqType=="<font color=red>Select Type of the project</font>"){
             array_push($errors,"<font color=red>type of the project is required</font>");
