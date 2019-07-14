@@ -93,7 +93,7 @@ require_once ('class.Database.php');
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="./index.php">- Home</a></li>
-                                        <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                        <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                         <li><a href="./about.php">- About</a></li>
                                         <li><a href="./services.php">- Services</a></li>
                                         <li><a href="#">- Developer List</a>
@@ -112,17 +112,14 @@ require_once ('class.Database.php');
                                             </ul>
                                         </li>
                                         <li><a href="./portfolio.php">- Portfolio</a></li>
-                                        <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./blog.php">- Blog</a></li>
-                                        <li><a href="./single-blog.php">- Blog Details</a></li>
-                                        <li><a href="./contact.php">- Contact</a></li>
+                                       
                                     </ul>
                                 </li>
                                 <!--li><a href="./portfolio.php">Portfolio</a></li-->
                                 <li><a href="./about.php">About</a></li>
-                                <li class="current-item"><a href="#">DeveloperList</a>
+                                <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
-                                        <li><a href="./allDevelopers.php">- All Developers</a></li>
+                                        <li class="current-item"><a href="./allDevelopers.php">- All Developers</a></li>
                                         <li><a href="./android.php">- Android Developing</a></li>
                                         <li><a href="./graphic.php">- Graphic Designing</a></li>
                                         <li><a href="./ios.php">- iOS Developing</a></li>
@@ -130,31 +127,33 @@ require_once ('class.Database.php');
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.php">Contact</a></li>
+                               
                             </ul>
 
                             <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
-                            <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
                                 echo "style='display:none'";
-                                }?>>
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
-                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
-                                    echo"style='display:none'";
-                                }?>>
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
 
-                                <div class="login-register-btn mx-3" <?php if(!(isset($_SESSION['username']))){
-                                    echo"style='display:none'";
-                                }?>>
-                                    <a href="logout.php">LogOut<i class="icon_gift_alt"></i></a>
-                                </div>
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
 
                             <!-- Search Icon -->
                             <div class="search-icon" data-toggle="modal" data-target="#searchModal">
@@ -166,8 +165,7 @@ require_once ('class.Database.php');
                     </div>
                 </nav>
             </div>
-        </div>
-        <?php
+            <?php
             if($Islogged){
                 echo "<p style='text-align:right'>";
                 echo "<font size='4' color='#6666ff'>";
@@ -177,6 +175,7 @@ require_once ('class.Database.php');
                 echo "</b></p>";
             }
             ?>
+        </div>
     </header>
     <!-- ***** Header Area End ***** -->
 
@@ -190,6 +189,7 @@ require_once ('class.Database.php');
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="#"> DeveloperList</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">All Developers</li>
                             </ol>
                         </nav>
@@ -238,7 +238,11 @@ require_once ('class.Database.php');
                         echo "<p>";
                         echo "Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut";
                         echo "</p>";
+                        if(isset($_SESSION['email'])){
                         echo "<a href='view_developer_profile.php?email=$d_email' class='read-more-btn'>View developer profile <i class='arrow_carrot-2right'></i></a>";
+                        }else{
+                        echo "<a href='login.php' class='read-more-btn'>login to view developers' profiles<i class='arrow_carrot-2right'></i></a>";
+                        }
                         
                     echo "</div>";
                 echo "</div>";
@@ -286,12 +290,17 @@ require_once ('class.Database.php');
 
                         <!-- Nav -->
                         <nav>
-                            <ul class="our-link">
+                        <ul class="our-link">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="blog.php">Blog</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                                <li><a href="register.php">Forum Registeration</a></li>
-                                <li><a href="login.php">Forum Sign In</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -310,7 +319,6 @@ require_once ('class.Database.php');
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -87,8 +87,8 @@ $username=$_SESSION['username'];
                                 <li class="current-item"><a href="./index.php">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./index.php">- Home</a></li>
-                                        <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                        <li class="current-item"><a href="./index.php">- Home</a></li>
+                                        <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                         <li><a href="./about.php">- About</a></li>
                                         <li><a href="./services.php">- Services</a></li>
                                         <li><a href="#">- Developer List</a>
@@ -102,18 +102,11 @@ $username=$_SESSION['username'];
                                                         <li><a href="./video.php">- Video Editing</a></li>
                                                     </ul>
                                                 </li>
-                                                <!--li><a href="#">- Dropdown Item</a></li>
-                                                <li><a href="#">- Dropdown Item</a></li-->
                                             </ul>
                                         </li>
-                                        <li><a href="./portfolio.php">- Portfolio</a></li>
-                                        <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./blog.php">- Blog</a></li>
-                                        <li><a href="./single-blog.php">- Blog Details</a></li>
-                                        <li><a href="./contact.php">- Contact</a></li>
+                                        <li><a href="./portfolio.php">- Portfolio</a></li>                         
                                     </ul>
                                 </li>
-                                <!--li><a href="./portfolio.php">Portfolio</a></li-->
                                 <li><a href="./about.php">About</a></li>
                                 <li><a href="#">DeveloperList</a>
                                     <ul class="dropdown">
@@ -124,17 +117,17 @@ $username=$_SESSION['username'];
                                         <li><a href="./website.php">- Website Developing</a></li>
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="./contact.php">Contact</a></li>
+                                </li>                 
                             </ul>
 
                             <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
-
                             <div class="login-register-btn mx-3" <?php if($Islogged){
                                 echo "style='display:none'";
                             }?>>
@@ -198,7 +191,7 @@ $username=$_SESSION['username'];
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms">Connect-in connects your <br> needs <span>greater</span></h2>
                                     <h5 data-animation="fadeInUp" data-delay="400ms">We love to create "cool" things on Digital Platforms</h5>
-                                    <a href="start exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                    <a href="start-exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
@@ -228,7 +221,7 @@ $username=$_SESSION['username'];
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms">Connect-in<br> looking for <span>valuable developers</span></h2>
                                     <h5 data-animation="fadeInUp" data-delay="400ms">We love to create "cool" things on Digital Platforms</h5>
-                                    <a href="start exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                    <a href="start-exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
@@ -258,7 +251,7 @@ $username=$_SESSION['username'];
                                 <div class="welcome-text">
                                     <h2 data-animation="fadeInUp" data-delay="100ms">Connect-in<br> help to <span>clients intentionally</span></h2>
                                     <h5 data-animation="fadeInUp" data-delay="400ms">We love to create "cool" things on Digital Platforms</h5>
-                                    <a href="start exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                    <a href="start-exploring.php" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
@@ -294,7 +287,7 @@ $username=$_SESSION['username'];
                         <h2>We provide you an interface for connection &amp; Digital Marketing</h2>
                         <p>Are you finding someone for create your needs or finding someone for market your service for them.</p>
                         <p>Then this is the right place for your requirement at digital marketing.</p>
-                        <a href="start exploring.php" class="btn uza-btn btn-2 mt-4">Start Exploring</a>
+                        <a href="start-exploring.php" class="btn uza-btn btn-2 mt-4">Start Exploring</a>
                     </div>
                 </div>
             </div>
@@ -706,10 +699,15 @@ $username=$_SESSION['username'];
                         <nav>
                             <ul class="our-link">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="blog.php">Blog</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                                <li><a href="register.php">Forum Registeration</a></li>
-                                <li><a href="login.php">Forum Sign In</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -728,7 +726,6 @@ $username=$_SESSION['username'];
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

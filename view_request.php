@@ -1,4 +1,11 @@
-<?php include('server.php'); 
+<?php
+session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+} 
   require_once ('class.Database.php');
   require_once ('class.Request.php');
   require_once ('class.PendingState.php');
@@ -83,11 +90,11 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav">
-                                <li class="current-item"><a href="./index.php">Home</a></li>
+                                <li><a href="./index.php">Home</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="./index.php">- Home</a></li>
-                                        <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                        <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                         <li><a href="./about.php">- About</a></li>
                                         <li><a href="./services.php">- Services</a></li>
                                         <li><a href="#">- Developer List</a>
@@ -106,10 +113,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="./portfolio.php">- Portfolio</a></li>
-                                        <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./blog.php">- Blog</a></li>
-                                        <li><a href="./single-blog.php">- Blog Details</a></li>
-                                        <li><a href="./contact.php">- Contact</a></li>
+                                       
                                     </ul>
                                 </li>
                                 <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -124,19 +128,32 @@
                                         <li><a href="./video.php">- Video Editing</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./contact.php">Contact</a></li>
+                              
                             </ul>
 
                             <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
 
-
-                            <div class="login-register-btn mx-3">
-                                <a href="logout.php">LogOut</a>
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
                             </div>
 
                             <!-- Search Icon -->
@@ -149,6 +166,16 @@
                     </div>
                 </nav>
             </div>
+            <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
@@ -274,7 +301,7 @@
                                 $num=$row['id'];
                                 echo "<form name='row' action='view_request.php' method=post>";
                                 echo "<select name='rate'>";
-                                echo "<option>Rate Developer</option>";
+                                echo "<option>Rate Client</option>";
                                 echo "<option value='1'>1</option>";
                                 echo "<option value='2'>2</option>";
                                 echo "<option value='3'>3</option>";
@@ -428,12 +455,17 @@
 
                         <!-- Nav -->
                         <nav>
-                            <ul class="our-link">
+                        <ul class="our-link">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="blog.php">Blog</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                                <li><a href="register.php">Forum Registeration</a></li>
-                                <li><a href="login.php">Forum Sign In</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -452,7 +484,6 @@
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

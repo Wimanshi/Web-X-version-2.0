@@ -1,3 +1,12 @@
+<?php
+session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,11 +82,11 @@
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -95,11 +104,8 @@
                                                     <li><a href="#">- Dropdown Item</a></li-->
                                                 </ul>
                                             </li>
-                                            <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                            <li class="current-item"><a href="./portfolio.php">- Portfolio</a></li>
+                                           
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -114,32 +120,54 @@
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./contact.php">Contact</a></li>
+                               
                                 </ul>
     
                                 <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                                <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
-                                <div class="login-register-btn mx-3">
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
-                            <!-- Nav End -->
+
+                            <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
+
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>
                 </div>
+                <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
@@ -196,7 +224,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="android.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -212,7 +240,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="graphic.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -228,7 +256,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="ios.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -244,7 +272,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="website.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -260,7 +288,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="video.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -276,7 +304,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="android.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -292,7 +320,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="graphic.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -308,7 +336,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="ios.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -324,7 +352,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="website.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -340,7 +368,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="video.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -356,7 +384,7 @@
                         </div>
                         <!-- View More -->
                         <div class="view-more-btn">
-                            <a href="#"><i class="arrow_right"></i></a>
+                            <a href="ios.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -428,12 +456,17 @@
 
                         <!-- Nav -->
                         <nav>
-                            <ul class="our-link">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Forum Registeration</a></li>
-                                <li><a href="#">Forum Sign In</a></li>
+                        <ul class="our-link">
+                                <li><a href="about.php">About Us</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -452,7 +485,6 @@
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>
                     </div>

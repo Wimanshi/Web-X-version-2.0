@@ -54,11 +54,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -77,10 +77,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                          
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -95,25 +92,17 @@
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./contact.php">Contact</a></li>
+                                  
                                 </ul>
-    
-                                <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                                <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
                             </div>
-                            <!-- Nav End -->
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>
@@ -232,13 +221,10 @@
     
                             <!-- Nav -->
                             <nav>
-                                <ul class="our-link">
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="blog.php">Blog</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
-                                    <li><a href="register.php">Forum Registeration</a></li>
-                                    <li><a href="login.php">Forum Sign In</a></li>
-                                </ul>
+                            <ul class="our-link">
+                                <li><a href="about.php">About Us</a></li>
+                                <li><a href="register.php">Forum Registeration</a></li>
+                            </ul>
                             </nav>
                         </div>
                     </div>
@@ -256,7 +242,6 @@
                                     <li><a href="#">Privacy</a></li>
                                     <li><a href="#">Media &amp; Press</a></li>
                                     <li><a href="#">Our Team</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

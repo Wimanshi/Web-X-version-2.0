@@ -85,9 +85,9 @@ $username=$_SESSION['username'];
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
+                                            <li class="current-item"><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
-                                            <li class="current-item"><a href="./services.php">- Services</a></li>
+                                            <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
                                                 <ul class="dropdown">
                                                     <li><a href="./allDevelopers.php">- All Developers</a>
@@ -104,7 +104,7 @@ $username=$_SESSION['username'];
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                           
+                                          
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -119,10 +119,9 @@ $username=$_SESSION['username'];
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                
+                                   
                                 </ul>
-    
-                                <!-- Profile -->
+                            <!-- Profile -->
                             <div class="get-a-quote" <?php if(!$Islogged){
                                 echo"style='display:none'";
                             }?>>
@@ -171,30 +170,123 @@ $username=$_SESSION['username'];
         </header>
         <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Breadcrumb Area Start ***** -->
-    <div class="breadcrumb-area">
-        <div class="container h-100">
-            <div class="row h-100 align-items-end">
-                <div class="col-12">
-                    <div class="breadcumb--con">
-                        <h2 class="title">Services</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Services</li>
-                            </ol>
-                        </nav>
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src="./img/core-img/curve-1.png" alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">Are you a client who want to hire someone ?<br> <span>As a Client</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">You can register as a client</h5>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src="./img/bg-img/myfirst.png" alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src="./img/core-img/curve-1.png" alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">Are you a developer who want to market your service ?<br><span>As a Developer</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">You can register as a developer</h5>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src="./img/bg-img/mysecond.png" alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- ***** Welcome Area End ***** -->
 
-        <!-- Background Curve -->
-        <div class="breadcrumb-bg-curve">
-            <img src="./img/core-img/curve-5.png" alt="">
+    <!-- ***** About Us Area Start ***** -->
+    <section class="uza-about-us-area">
+        <div class="welcome-slides owl-carousel">
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-top">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2> <span>As a Client</span></h2>
+                                    <h5>You can register as a client</h5>
+                                    <a href="#" class="btn uza-btn btn-2">Register as a Client</a>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Plan the attendees.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Begin with instroduction.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Give an over view of the project.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Take the time to talk tech and ask questions.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Find out what the developer needs from you.</p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2> <span>As a Developer</span></h2>
+                                    <h5>You can register as a Developer</h5>
+                                    <a href="#" class="btn uza-btn btn-2">Register as a Developer</a>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Choose a professional and friendly photo.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Keep your title short and sweet.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Showcase your experties in the overview section.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Make your skills section work for you.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Tell your story by showing your best work in your portfolid.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Link other accounts to your profile.</p>
+                                <p><i class="fa fa-heart-o" aria-hidden="true"></i> Show off your previous success stories in your employment history.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- ***** Breadcrumb Area End ***** -->
+    </section>
+    <!-- ***** About Us Area End ***** -->
 
     <!-- ***** Services Area Start ***** -->
     <section class="uza-services-area section-padding-80-0">
@@ -250,44 +342,103 @@ $username=$_SESSION['username'];
             </div>
         </section>
         <!-- ***** Services Area End ***** -->
-
-    <!-- ***** CTA, Testimonial & CFA Area Start ***** -->
-    <section class="cta-testimonial-cfa-area">
-        <!-- Background Curve -->
-        <div class="cta-testimonial-cfa-bg-curve">
-            <img src="./img/core-img/curve-6.png" alt="">
-        </div>
-
-        <!-- ***** Border Bottom ***** -->
+    
+        <!-- ***** Portfolio Area Start ***** -->
+    <section class="uza-portfolio-area section-padding-80">
         <div class="container">
-            <div class="border-bottom"></div>
-        </div>
-
-        <!-- ***** CTA Area Start ***** -->
-        <div class="uza-cta-area section-padding-80-0">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-8">
-                        <div class="cta-content mb-80">
-                            <h2>Interested in working with us?</h2>
-                            <!--h6>Hit the button below or give us a call!</h6-->
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4">
-                        <div class="cta-content mb-80">
-                            <div class="call-now-btn">
-                                <a href="#"><span>Call us now:</span> 2 729 729</a>
-                            </div>
-                        </div>
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Our Portfolio</h2>
+                        <p>We like to give our service for your benefit</p>
+                        <!--p>We stay on top of our industry by being experts in yours.</p-->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- ***** CTA Area End ***** -->
 
-        <!-- ***** Client Feedback Area Start ***** -->
-        <div class="clients-feedback-area section-padding-0-80 clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Portfolio Slides -->
+                <div class="portfolio-sildes owl-carousel">
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Android.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Android Developing</h4>
+                            <p>We are finding for best of the Android Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="android.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Graphic_design.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Graphic Designing</h4>
+                            <p>We are finding for best of the Graphic Designers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="graphic.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/iOS.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>iOS Developing</h4>
+                            <p>We are finding for best of the iOS Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="ios.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Website_developing.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Website Developing</h4>
+                            <p>We are finding for best of the Website Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="website.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Video_editing.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Video Editing</h4>
+                            <p>We are finding for best of the Video Editors to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="video.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Feedback Area Start -->
+        <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -313,7 +464,7 @@ $username=$_SESSION['username'];
                                     </div>
                                     <!-- Author Info -->
                                     <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO Connect in</span></h5>
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
                                     </div>
                                     <!-- Quote Icon -->
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
@@ -339,7 +490,7 @@ $username=$_SESSION['username'];
                                     </div>
                                     <!-- Author Info -->
                                     <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO connect in</span></h5>
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
                                     </div>
                                     <!-- Quote Icon -->
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
@@ -365,7 +516,7 @@ $username=$_SESSION['username'];
                                     </div>
                                     <!-- Author Info -->
                                     <div class="author-info">
-                                        <h5>Darrell Goodman <span>- CEO connect in</span></h5>
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
                                     </div>
                                     <!-- Quote Icon -->
                                     <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
@@ -377,93 +528,136 @@ $username=$_SESSION['username'];
                 </div>
             </div>
         </div>
-        <!-- ***** Client Feedback Area End ***** -->
+        <!-- Client Feedback Area End -->
 
-        <!-- ***** Cool Facts Area Start ***** -->
-        <div class="uza-cf-area section-padding-80-0">
-            <div class="container">
-                <div class="row">
+        <!-- Border -->
+        <div class="container">
+            <div class="border-line"></div>
+        </div>
 
-                    <!-- Single Cool Facts Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-cf-area d-flex align-items-center mb-80">
-                            <h2><span class="counter">90</span></h2>
-                            <div class="cf-text">
-                                <h6>Projects<br>Completed</h6>
+        <!-- Background Curve -->
+        <div class="portfolio-bg-curve">
+            <img src="./img/core-img/curve-3.png" alt="">
+        </div>
+    </section>
+    <!-- ***** Portfolio Area End ***** -->
+    
+        <!-- ***** Blog Area Start ***** -->
+        <section class="uza-blog-area">
+            <!-- Background Curve -->
+            <div class="blog-bg-curve">
+                <img src="./img/core-img/curve-4.png" alt="">
+            </div>
+    
+            <!-- CTA Area Start -->
+            <div class="uza-cta-area section-padding-0-80">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-8">
+                            <div class="cta-content mb-80">
+                                <h2>Interested in working with us?</h2>
+                                <!--h6>Hit the button below or give us a call!</h6-->
                             </div>
-                            <div class="bg-icon"><i class="icon_piechart"></i></div>
+                        </div>
+    
+                        <div class="col-12 col-lg-4">
+                            <div class="cta-content mb-80">
+                                <div class="call-now-btn">
+                                    <a href="#"><span>Call us now:</span> 2 729 729</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Single Cool Facts Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-cf-area d-flex align-items-center mb-80">
-                            <h2><span class="counter">120</span></h2>
-                            <div class="cf-text">
-                                <h6>Happy<br>clients</h6>
-                            </div>
-                            <div class="bg-icon"><i class="icon_heart_alt"></i></div>
-                        </div>
-                    </div>
-
-                    <!-- Single Cool Facts Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-cf-area d-flex align-items-center mb-80">
-                            <h2><span class="counter">50</span></h2>
-                            <div class="cf-text">
-                                <h6>WEB<br>awards</h6>
-                            </div>
-                            <div class="bg-icon"><i class="icon_book_alt"></i></div>
-                        </div>
-                    </div>
-
-                    <!-- Single Cool Facts Area -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="single-cf-area d-flex align-items-center mb-80">
-                            <h2><span class="counter">20</span></h2>
-                            <div class="cf-text">
-                                <h6>Our<br>experts</h6>
-                            </div>
-                            <div class="bg-icon"><i class="icon_profile"></i></div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-        <!-- ***** Cool Facts Area End ***** -->
-    </section>
-    <!-- ***** CTA, Testimonial & CFA Area End ***** -->
-
-    <!-- ***** Newsletter Area Start ***** -->
-    <!--section class="uza-newsletter-area">
-        <div class="container">
-            <div class="row align-items-center justify-content-between"-->
-                <!-- Newsletter Content -->
-                <!--div class="col-12 col-md-6 col-lg-6">
-                    <div class="nl-content mb-80">
-                        <h2>Subscribe to our Newsletter</h2>
-                        <p>Subscribe our newsletter gor get notification about new updates, etc...</p>
-                    </div>
-                </div-->
-                <!-- Newsletter Form -->
-                <!--div class="col-12 col-md-6 col-lg-5">
-                    <div class="nl-form mb-80">
-                        <form action="#" method="post">
-                            <input type="email" name="nl-email" value="" placeholder="Your Email">
-                            <button type="submit">Subscribe</button>
-                        </form>
+            <!-- CTA Area End -->
+    
+            <!--div class="container">
+                <div class="row"-->
+                    <!-- Section Heading -->
+                    <!--div class="col-12">
+                        <div class="section-heading text-center">
+                            <h2>Our Latest Blogs</h2-->
+                            <!--p>Hit the button below or give us a call!</p-->
+                        <!--/div>
                     </div>
                 </div>
-            </div-->
-            <!-- Border Bottom -->
-            <!--div class="border-line"></div>
-        </div>
-    </section-->
-    <!-- ***** Newsletter Area End ***** -->
-
-    <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-area section-padding-80-0">
+    
+                <div class="row"-->
+    
+                    <!-- Single Blog Post -->
+                    <!--div class="col-12 col-lg-4">
+                        <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/8.jpg);"-->
+                            <!-- Post Content -->
+                            <!--div class="post-content">
+                                <span class="post-date"><span>23</span> August, 2018</span>
+                                <a href="#" class="post-title">SEO: The Movie By Ignite Visibility</a>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
+                                <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                            </div>
+                        </div>
+                    </div-->
+    
+                    <!-- Single Blog Post -->
+                    <!--div class="col-12 col-lg-4">
+                        <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/9.jpg);"-->
+                            <!-- Post Content -->
+                            <!--div class="post-content">
+                                <span class="post-date"><span>13</span> December, 2018</span>
+                                <a href="#" class="post-title">What Curling Irons Are The Best Ones</a>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
+                                <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                            </div>
+                        </div>
+                    </div-->
+    
+                    <!-- Single Blog Post -->
+                    <!--div class="col-12 col-lg-4">
+                        <div class="single-blog-post bg-img mb-80" style="background-image: url(./img/bg-img/10.jpg);"-->
+                            <!-- Post Content -->
+                            <!--div class="post-content">
+                                <span class="post-date"><span>08</span> July, 2018</span>
+                                <a href="#" class="post-title">Amazon REV Workshop: Road to Seattle</a>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut</p>
+                                <a href="#" class="read-more-btn">Read More <i class="arrow_carrot-2right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section-->
+        <!-- ***** Blog Area End ***** -->
+    
+        <!-- ***** Newsletter Area Start ***** -->
+        <!--section class="uza-newsletter-area">
+            <div class="container">
+                <div class="row align-items-center justify-content-between"-->
+                    <!-- Newsletter Content -->
+                    <!--div class="col-12 col-md-6 col-lg-6">
+                        <div class="nl-content mb-80">
+                            <h2>Subscribe to our Newsletter</h2>
+                            <p>Subscribe our newsletter gor get notification about new updates, etc...</p>
+                        </div>
+                    </div-->
+                    <!-- Newsletter Form -->
+                    <!--div class="col-12 col-md-6 col-lg-5">
+                        <div class="nl-form mb-80">
+                            <form action="#" method="post">
+                                <input type="email" name="nl-email" value="" placeholder="Your Email">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div-->
+                <!-- Border Bottom -->
+                <!--div class="border-line"></div>
+            </div>
+        </section-->
+        <!-- ***** Newsletter Area End ***** -->
+    
+        <!-- ***** Footer Area Start ***** -->
+        <footer class="footer-area section-padding-80-0">
             <div class="container">
                 <div class="row justify-content-between">
     

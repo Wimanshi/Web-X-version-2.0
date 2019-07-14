@@ -86,7 +86,7 @@ $username=$_SESSION['username'];
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -105,10 +105,7 @@ $username=$_SESSION['username'];
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -123,44 +120,45 @@ $username=$_SESSION['username'];
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./contact.php">Contact</a></li>
+                                    
                                 </ul>
     
                                 <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                                <!-- Login / Register -->
-                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
-                                echo "style='display:none'";
-                                }?>>
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
-                                <div class="login-register-btn mx-3" <?php if(isset($_SESSION['username'])){
-                                    echo"style='display:none'";
-                                }?>>
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
-
-                                <div class="login-register-btn mx-3" <?php if(!(isset($_SESSION['username']))){
-                                    echo"style='display:none'";
-                                }?>>
-                                    <a href="logout.php">LogOut<i class="icon_gift_alt"></i></a>
-                                </div>
-    
-                                <!-- Search Icon -->
-                                <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                                    <i class="icon_search"></i>
-                                </div>
+                            <div class="get-a-quote" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
-                            <!-- Nav End -->
+
+                            <!-- Login / Register -->
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
+
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                                <i class="icon_search"></i>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
     
                         </div>
                     </nav>
                 </div>
-            </div>
-            <?php
+                <?php
             if($Islogged){
                 echo "<p style='text-align:right'>";
                 echo "<font size='4' color='#6666ff'>";
@@ -170,6 +168,7 @@ $username=$_SESSION['username'];
                 echo "</b></p>";
             }
             ?>
+            </div>
         </header>
         <!-- ***** Header Area End ***** -->
 
@@ -206,10 +205,6 @@ $username=$_SESSION['username'];
                 <div class="col-12 col-lg-6">
                     <div class="about-us-thumbnail mb-80">
                         <img src="./img/bg-img/2.jpg" alt="">
-                        <!-- Video Area -->
-                        <div class="uza-video-area hi-icon-effect-8">
-                            <a href="https://www.youtube.com/watch?v=sSakBz_eYzQ" class="hi-icon video-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -242,7 +237,7 @@ $username=$_SESSION['username'];
                                     <div class="tab-content-text">
                                         <p>Our mission is to enhancing the business growth of our customers with creative Design and Development to deliver market-defining high-quality solutions that create value and reliable competitive advantage for our clients around the world.</p>
                                         <p>Our mission is to deliver optimal solutions with quality and services at reasonable prices. For us customer satisfaction is given top place. We are very friendly in our dealings to the customers and it helps us retain existing clients and expand customer circle. We always try to improve the quality of our products by exploring innovative ideas.</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
 
@@ -250,7 +245,7 @@ $username=$_SESSION['username'];
                                     <!-- Tab Content Text -->
                                     <div class="tab-content-text">
                                         <p>We create solutions for real life problems or a business problems, makes a business out of it, and create an enterprise which runs a business by providing a software solution for a business problem.</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
 
@@ -258,7 +253,7 @@ $username=$_SESSION['username'];
                                     <!-- Tab Content Text -->
                                     <div class="tab-content-text">
                                             <p>Our ultimate goal as a team is to make a positive contribution in the lives of others by helping them achieve their goals through the software we create.Our mission represents the steps involved in achieving this goal</p>
-                                        <a href="contact.php" class="btn uza-btn mt-30">Get In Touch</a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -630,13 +625,18 @@ $username=$_SESSION['username'];
     
                             <!-- Nav -->
                             <nav>
-                                <ul class="our-link">
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="blog.php">Blog</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
-                                    <li><a href="register.php">Forum Registeration</a></li>
-                                    <li><a href="login.php">Forum Sign In</a></li>
-                                </ul>
+                            <ul class="our-link">
+                                <li><a href="about.php">About Us</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
+                            </ul>
                             </nav>
                         </div>
                     </div>
@@ -654,7 +654,6 @@ $username=$_SESSION['username'];
                                     <li><a href="#">Privacy</a></li>
                                     <li><a href="#">Media &amp; Press</a></li>
                                     <li><a href="#">Our Team</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>

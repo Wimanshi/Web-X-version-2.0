@@ -1,4 +1,11 @@
-<?php  session_start(); 
+<?php
+session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+} 
 require_once ('class.hashlist.php');
   require_once ('class.Database.php');
   require_once ('class.Request.php');
@@ -185,11 +192,11 @@ $sss.=" ";
                             <!-- Nav Start -->
                         <div class="classynav">
                                 <ul id="nav">
-                                    <li class="current-item"><a href="./index.php">Home</a></li>
+                                    <li><a href="./index.php">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -208,10 +215,7 @@ $sss.=" ";
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
-                                            <li><a href="./contact.php">- Contact</a></li>
+                                          
                                         </ul>
                                     </li>
                                     <!--li><a href="./portfolio.php">Portfolio</a></li-->
@@ -226,7 +230,7 @@ $sss.=" ";
                                             <li><a href="./video.php">- Video Editing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./contact.php">Contact</a></li>
+                              
                                 </ul>
     
                                 <!-- Profile -->
@@ -235,11 +239,11 @@ $sss.=" ";
                                 </div>
 								<!-- Edit profile-->
 								<div class="get-a-quote">
-                                    <a href="./client-edit-profile.php" class="btn uza-btn">edit profile</a>
+                                    <a href="./client-edit-profile.php" class="btn uza-btn">Update profile</a>
                                 </div>
                                 <!-- Login / Register -->
                                 <div class="login-register-btn mx-3">
-                                    <a href="login.php">Logout<i class="icon_lock_alt"></i></a>    
+                                    <a href="logout.php">Logout<i class="icon_lock_alt"></i></a>    
                                 </div>
     
                                 <!-- Search Icon -->
@@ -252,6 +256,16 @@ $sss.=" ";
                         </div>
                     </nav>
                 </div>
+                <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
             </div>
         </header>
         <!-- ***** Header Area End ***** -->
@@ -368,8 +382,8 @@ $sss.=" ";
 
                         <!-- Footer Content -->
                         <div class="footer-content mb-15">
-                            <h3>(+65) 1234 5678</h3>
-                            <p>40 Baria Sreet 13/2 NY City, US <br> hello.colorlib@gmail.com</p>
+                            <h3>2 729 729</h3>
+                            <p>University of Moratuwa <br> connectin@gmail.com</p>
                         </div>
                         <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
                             Closed on Weekends</p>
@@ -385,11 +399,16 @@ $sss.=" ";
                         <!-- Nav -->
                         <nav>
                             <ul class="our-link">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Forum Registeration</a></li>
-                                <li><a href="#">Forum Sign In</a></li>
+                                <li><a href="about.php">About Us</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -408,7 +427,6 @@ $sss.=" ";
                                 <li><a href="#">Privacy</a></li>
                                 <li><a href="#">Media &amp; Press</a></li>
                                 <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -419,11 +437,11 @@ $sss.=" ";
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
                         <h4 class="widget-title">About Us</h4>
-                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
+                        <p>We are a resourcefull team who interested to working with teams.</p>
 
                         <!-- Copywrite Text -->
                         <div class="copywrite-text mb-30">
-                            <p>&copy; Copyright 2018 <a href="#">Colorlib</a>.</p>
+                            <p>&copy; Copyright 2019 <a href="#">Web-X team</a>.</p>
                         </div>
 
                         <!-- Social Info -->
@@ -442,7 +460,7 @@ $sss.=" ";
  <div class="row" style="margin-bottom: 30px;">
                 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://Web-X.com" target="_blank">Web-X</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
 
@@ -461,45 +479,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/uza.bundle.js"></script>
     <!-- Active js -->
     <script src="js/default-assets/active.js"></script>
-<!--/////////////////////////////////////////////////-->
-<!-- jQuery -->
-<script src=".profile-master/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src=".profile-master/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src=".profile-master/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src=".profile-master/js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src=".profile-master/js/jquery.stellar.min.js"></script>
-	<!-- Easy PieChart -->
-	<script src=".profile-master/js/jquery.easypiechart.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src=".profile-master/js/google_map.js"></script>
-	
-	<!-- Main -->
-	<script src=".profile-master/js/main.js"></script>
-<!--//////////////////////////////////////////////-->
-    
-    <!-- jQuery -->
-	<script src="jsProfile/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="jsProfile/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="jsProfile/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="jsProfile/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="jsProfile/jquery.stellar.min.js"></script>
-	<!-- Easy PieChart -->
-	<script src="jsProfile/jquery.easypiechart.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="jsProfile/google_map.js"></script>
-	
-	<!-- Main -->
-	<script src="jsProfile/main.js"></script>
 
-	</body>
+</body>
+
 </html>
