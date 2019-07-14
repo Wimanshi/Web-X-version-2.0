@@ -337,7 +337,6 @@ $username=$_SESSION['username'];
                     <nav>
                     <ul class="our-link">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
                                 <li <?php if($Islogged){
                                 echo "style='display:none'";
                             }?>><a href="register.php">Forum Registeration</a></li>
@@ -365,7 +364,6 @@ $username=$_SESSION['username'];
                             <li><a href="#">Privacy</a></li>
                             <li><a href="#">Media &amp; Press</a></li>
                             <li><a href="#">Our Team</a></li>
-                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
