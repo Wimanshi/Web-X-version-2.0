@@ -1,4 +1,11 @@
-<?php  session_start(); 
+<?php
+session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username1=$_SESSION['username'];
+} 
   require_once ('class.Database.php');
   require_once ('class.Request.php');
 ?>
@@ -236,17 +243,6 @@ $sss.=" ";
                                 <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
-                            <!-- Login / Register -->
-                            <div class="login-register-btn mx-3" <?php if($Islogged){
-                                echo "style='display:none'";
-                            }?>>
-                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                            </div>
-                            <div class="login-register-btn mx-3" <?php if($Islogged){
-                                echo"style='display:none'";
-                            }?>>
-                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                            </div>
 
                             <div class="login-register-btn mx-3" <?php if(!$Islogged){
                                 echo"style='display:none'";
@@ -284,11 +280,11 @@ $sss.=" ";
             <div class="row h-100 align-items-end">
                 <div class="col-12">
                     <div class="breadcumb--con">
-                        <h2 class="title">Profile of <?php echo $username;?></h2>
+                        <h2 class="title">Profile of <?php echo $name;?></h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Profile of <?php echo $username;?></li>
+                                <li class="breadcrumb-item active" aria-current="page">Profile of <?php echo $name;?></li>
                             </ol>
                         </nav>
                     </div>
@@ -316,7 +312,7 @@ $sss.=" ";
 							<div class="profile-thumb" style="background: url(<?php echo($profpic); ?>);"></div>
 							<!--<p><a href="./request.php" class="btn btn-default btn-lg">Send Request</a></p>-->
 							
-							<h1><span><?php echo $username;?></span></h1>
+							<h1><span><?php echo $name;?></span></h1>
 							<p>
 								<ul class="fh5co-social-icons">
 									<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -342,7 +338,7 @@ $sss.=" ";
 			<div class="row">
 				<div class="col-md-4">
 					<ul class="info">
-						<li><span class="first-block">username:</span><span class="second-block"><?php echo  $username ?></span></li>
+						<li><span class="first-block">username:</span><span class="second-block"><?php echo  $name ?></span></li>
 						<li><span class="first-block">Phone:</span><span class="second-block"><?php echo $phone ?></span></li>
 						<li><span class="first-block">Email:</span><span class="second-block"><?php echo $email ?></span></li>
 					</ul>
@@ -363,7 +359,7 @@ $sss.=" ";
 
 
 	<!-- ***** Profile Area End ***** -->
-
+<hr>
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area section-padding-80-0">
         <div class="container">
@@ -377,11 +373,11 @@ $sss.=" ";
 
                         <!-- Footer Content -->
                         <div class="footer-content mb-15">
-                            <h3>(+65) 1234 5678</h3>
-                            <p>40 Baria Sreet 13/2 NY City, US <br> hello.colorlib@gmail.com</p>
-                        </div>
-                        <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
-                            Closed on Weekends</p>
+                                <h3>2 729 729</h3>
+                                <p>University of Moratuwa <br> connectin@gmail.com</p>
+                            </div>
+                            <p class="mb-0">Mon - Fri: 9:00 - 19:00 <br>
+                                Closed on Weekends</p>
                     </div>
                 </div>
 
