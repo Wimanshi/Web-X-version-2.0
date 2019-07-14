@@ -83,7 +83,7 @@ require_once ('class.Database.php');?>
 }
     
 $sss.=" ";
-        $image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['profile_photo']).'" height="200" width = "200"/>';
+        //$image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['profilephoto']).'" height="200" width = "200"/>';
     }
     //verify_query($result_set);
     
