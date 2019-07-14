@@ -105,7 +105,6 @@ $username=$_SESSION['username'];
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
                                             <li class="current-item"><a href="./contact.php">- Contact</a></li>
                                         </ul>
                                     </li>

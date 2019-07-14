@@ -78,7 +78,6 @@
                                                 </ul>
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
-                                            <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
                                          
                                         </ul>
                                     </li>
