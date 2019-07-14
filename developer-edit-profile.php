@@ -103,7 +103,7 @@ if (isset($_SESSION['email'])){
         if(mysqli_num_rows($result4)>0){
             $result2=mysqli_query($connection,$query2);
         }
-        else{
+        else if($skills!="" and $percentage!=""){
             $result3=mysqli_query($connection,$query3);
         }
         if (!$result1){

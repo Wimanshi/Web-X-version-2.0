@@ -1,5 +1,5 @@
+<?php include('server.php') ?>
 <?php
-session_start();
 $Islogged=false;
 if (isset($_SESSION['email'])){
     $Islogged=true;
@@ -248,7 +248,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                         <h6>Description about the project</h6>
                                     </label><br>
                                     <div class="form-group">
-                                    <input type="text" class="form-control mb-30" name="description" required>
+                                    <input type="text" class="form-control mb-30" name="description">
                                     </div>
                                 </div>
 
@@ -262,8 +262,8 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
 
                                 <div class="col-lg-8">
-                                    <select class="form-control mb-30" name="period" class="select" required>
-                                        <option value="">Select Duration</option>
+                                    <select class="form-control mb-30" name="period" class="select">
+                                        <option>Select Duration</option>
                                         <option value="3 days">3 days</option>
                                         <option value="5 days">5 days</option>
                                         <option value="1 week">1 week</option>
@@ -289,7 +289,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
                             </div>
                         </form>
-                        <p>Not yet a member? <a href="register.php">Register</a></p>
+                      
                     </div>
                 </div>
 
@@ -297,12 +297,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                 <div class="col-12 col-lg-3">
                     <div class="contact-sidebar-area mb-80">
                         <!-- Single Sidebar Area -->
-                        <div class="single-contact-card mb-50">
-                            <h4>Contact Us</h4>
-                            <h3>2 729 729</h3>
-                            <h6>connectin@gmail.com</h6>
-                            <h6>Mon - Fri: 9:00 - 19:00 <br>Closed on Weekends</h6>
-                        </div>
+                        
 
                     </div>
                 </div>

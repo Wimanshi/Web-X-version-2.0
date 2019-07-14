@@ -1,11 +1,4 @@
-<?php
-session_start();
-$Islogged=false;
-if (isset($_SESSION['email'])){
-    $Islogged=true;
-    $type=$_SESSION['userType'];
-$username1=$_SESSION['username'];
-} 
+<?php  session_start(); 
   require_once ('class.Database.php');
   require_once ('class.Request.php');
 ?>
@@ -13,12 +6,6 @@ $username1=$_SESSION['username'];
 <!--?php require_once('project/inc/functions.php'); ?-->
 <?php
 $d_email=$_GET['email'];
-?>
-<?php
-$previous = "javascript:history.go(-1)";
-if(isset($_SERVER['HTTP_REFERER'])) {
-    $previous = $_SERVER['HTTP_REFERER'];
-}
 ?>
 <?php 
 	//checking if a user is logged in
@@ -28,60 +15,41 @@ if(isset($_SERVER['HTTP_REFERER'])) {
 	$user_list = '';
     //getting the list of users
     $email=$d_email;
-    $query = "SELECT * FROM developer WHERE email= '{$email}' LIMIT 1";
-
-    $querySkills="SELECT * FROM tehnicalskills WHERE email='{$email}'" ;
+    $query = "SELECT * FROM client WHERE email= '{$email}' LIMIT 1";
     $db = Database::getInstance();
     $connection = $db->getConnection();
     $result_set = mysqli_query($connection,$query);
-    $skills= mysqli_query($connection,$querySkills);
     //$query1= "SELECT * FROM users WHERE email= '{$email}' LIMIT 1";
     //$result_set1 = mysqli_query($connection,$query1);
     //verify_query($result_set);
     $user= mysqli_fetch_assoc($result_set);
-    $username = $user['username'];
+    $name = $user['username'];
     $email = $user['email'];
-    $description = $user['description'];
+    
     //$user = mysqli_fetch_assoc($result_set);
     $phone = $user['phone'];
-    $proffesion = $user['developer_type'];
-    //$linkedIn = $user['linkedin'];
+    
+    //$LinkedLink = $user['linkedin'];
     $ranking =(int) $user['ranking'];
     //$image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['Profile_Photo']).'" height="200" width = "200"/>';
-    $_SESSION['developer_name']=$username;
-    $_SESSION['developer_email']=$email;
-    $type=$user['developer_type'];
-    if ($type=="AndroidDeveloper"){
-        $_SESSION['project_type']="Android Application";
-    }else if($type=="IOSDeveloper"){
-        $_SESSION['project_type']="iOS Application";
-    }else if($type=="WebsiteDeveloper"){
-        $_SESSION['project_type']="Web Application/Web Site";
-    }else if($type=="GraphicDesigner"){
-        $_SESSION['project_type']="Graphic Design";
-    }else if($type=="VedioEditor"){
-        $_SESSION['project_type']="Video/Short Film";
-    }
+    //$_SESSION['developer_name']=$name;
+    //$_SESSION['developer_email']=$email;
 
     $query12 = "SELECT * FROM objreq";    
     $result_set12 = mysqli_query($connection,$query12);
-    $result123=array();
+    $resultLists123="";
     $rate=0;
     $i=0;
     //echo $d_email;
     while($r=mysqli_fetch_array($result_set12,MYSQLI_ASSOC)){
         $req=$r['req'];
         $rq=unserialize($req);
-        if($rq->getDevEmail()==$d_email){
+        if($rq->getClientEmail()==$d_email){
             //echo $rate;
-            if($rq->getDevRating()!="not yet"){
-                $rate=$rate+(float)$rq->getDevRating();
+            if($rq->getClientRating()!="not yet"){
+                $rate=$rate+(float)$rq->getClientRating();
                 //echo $rate;
                 $i=$i+1;
-                if ((int)($rq->getDevRating())>=4){
-                    array_push($result123,$rq);
-
-                }
             }
         }
         //$resultLists123.="<tr>";
@@ -91,22 +59,21 @@ if(isset($_SERVER['HTTP_REFERER'])) {
         //$resultLists123.="<br></br>";
     }
     if ($i !=0){
-        $rate=round($rate/$i,1);
+        $rate=round($rate/$i,0);
     }
-    //echo $rate;
+
     $sss="";
-    $i = 1;
-    $rate=(int)$rate;
-    while($i <= $rate){
-        $i++;
-        $sss.="<span style='font-size:40px;'>&#9733;</span>";
+        $i = 1;
+        $rate=(int)$rate;
+        while($i <= $rate){
+            $i++;
+            $sss.="<span style='font-size:40px;'>&#9733;</span>";
 }
 
 $sss.=" ";
 
+	
 ?>
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -349,7 +316,6 @@ $sss.=" ";
 							<!--<p><a href="./request.php" class="btn btn-default btn-lg">Send Request</a></p>-->
 							
 							<h1><span><?php echo $username;?></span></h1>
-							<h3><span><?php echo  $proffesion ?> </span></h3>
 							<p>
 								<ul class="fh5co-social-icons">
 									<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -378,8 +344,6 @@ $sss.=" ";
 						<li><span class="first-block">username:</span><span class="second-block"><?php echo  $username ?></span></li>
 						<li><span class="first-block">Phone:</span><span class="second-block"><?php echo $phone ?></span></li>
 						<li><span class="first-block">Email:</span><span class="second-block"><?php echo $email ?></span></li>
-						<li><span class="first-block">profession:</span><span class="second-block"><?php echo $proffesion ?></span></li>
-						<li><span class="first-block">linkedIn:</span><span class="second-block"><?php echo $linkedIn ?></span></li>
 					</ul>
 				</div>
 				<div class="col-md-8">
@@ -392,98 +356,7 @@ $sss.=" ";
 		</div>
 	</div>
 
-	<div id="fh5co-skills" class="animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Skills</h2>
-				</div>
-			</div>
-			<div class="row row-pb-md">
-				
-                <?php while($skill=mysqli_fetch_array($skills,MYSQLI_ASSOC)){
-                    $language=$skill['skill'];
-                    $percentage=$skill['percentage'];
-                    echo "<div class='col-md-3 col-sm-6 col-xs-12 text-center'>";
-                    echo "<div class='chart' data-percent='$percentage'><span><strong>$language</strong>$percentage%</span></div>";
-                    echo "</div>";
-                }?>
-					
-				
-				
-			</div>
-			
-		</div>
-	</div>
-
-	<div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Projects</h2>
-				</div>
-			</div>
-			<div class="row">
-				
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-2.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-3.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				
-			
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-6.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-
 	
-	
-	<div id="fh5co-started" class="fh5co-bg-dark">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Hire Me!</h2>
-                    <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-					<?php
-						if($_SESSION['userType']=='client'){
-							echo("<a href='./request.php' class='btn uza-btn'>Send Request</a>");
-						}
-                    ?>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	</div>
 	
 
@@ -642,3 +515,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	</body>
 </html>
+
+
+<script>
+ 
+ document.getElementById("timeline").addEventListener('click',notify);
+  
+  function notify(event){
+    alert("798687576");
+  }
+
+</script>
