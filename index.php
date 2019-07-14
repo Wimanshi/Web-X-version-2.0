@@ -2,7 +2,11 @@
 session_start();
 
 $Islogged=false;
-$type=$_SESSION['userType'];
+
+if (isset($_SESSION['userType'])){
+    $type=$_SESSION['userType'];
+}
+
 
 if (isset($_SESSION['email'])){
     $Islogged=true;
