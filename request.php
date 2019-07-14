@@ -248,7 +248,7 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                         <h6>Description about the project</h6>
                                     </label><br>
                                     <div class="form-group">
-                                    <input type="text" class="form-control mb-30" name="description">
+                                    <input type="text" class="form-control mb-30" name="description" required>
                                     </div>
                                 </div>
 
@@ -262,8 +262,8 @@ if(isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
 
                                 <div class="col-lg-8">
-                                    <select class="form-control mb-30" name="period" class="select">
-                                        <option>Select Duration</option>
+                                    <select class="form-control mb-30" name="period" class="select" required>
+                                        <option value="">Select Duration</option>
                                         <option value="3 days">3 days</option>
                                         <option value="5 days">5 days</option>
                                         <option value="1 week">1 week</option>
