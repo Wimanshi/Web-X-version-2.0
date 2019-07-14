@@ -1,5 +1,11 @@
 <?php
 session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +86,7 @@ session_start();
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -100,8 +106,6 @@ session_start();
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
                                             <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
                                             <li class="current-item"><a href="./contact.php">- Contact</a></li>
                                         </ul>
                                     </li>
@@ -153,6 +157,16 @@ session_start();
                         </div>
                     </nav>
                 </div>
+                <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
             </div>
         </header>
         <!-- ***** Header Area End ***** -->

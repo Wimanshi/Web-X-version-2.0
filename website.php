@@ -1,5 +1,11 @@
-<?php 
+<?php
 session_start();
+$Islogged=false;
+if (isset($_SESSION['email'])){
+    $Islogged=true;
+    $type=$_SESSION['userType'];
+$username=$_SESSION['username'];
+}
 require_once ('class.Database.php');
 ?>
 
@@ -87,7 +93,7 @@ require_once ('class.Database.php');
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="./index.php">- Home</a></li>
-                                        <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                        <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                         <li><a href="./about.php">- About</a></li>
                                         <li><a href="./services.php">- Services</a></li>
                                         <li><a href="#">- Developer List</a>
@@ -107,8 +113,6 @@ require_once ('class.Database.php');
                                         </li>
                                         <li><a href="./portfolio.php">- Portfolio</a></li>
                                         <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                        <li><a href="./blog.php">- Blog</a></li>
-                                        <li><a href="./single-blog.php">- Blog Details</a></li>
                                         <li><a href="./contact.php">- Contact</a></li>
                                     </ul>
                                 </li>
@@ -223,8 +227,11 @@ require_once ('class.Database.php');
                         echo "<p>";
                         echo "Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut";
                         echo "</p>";
-                        echo "<a href='view_developer_profile.php?email=$d_email' class='read-more-btn'>View developer profile <i class='arrow_carrot-2right'></i></a>";
-                        
+                        if(isset($_SESSION['email'])){
+                            echo "<a href='view_developer_profile.php?email=$d_email' class='read-more-btn'>View developer profile <i class='arrow_carrot-2right'></i></a>";
+                            }else{
+                            echo "<a href='login.php' class='read-more-btn'>login to view developers' profiles<i class='arrow_carrot-2right'></i></a>";
+                            }
                     echo "</div>";
                 echo "</div>";
             echo "</div>";

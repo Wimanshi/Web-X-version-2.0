@@ -86,7 +86,7 @@ $username=$_SESSION['username'];
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -106,8 +106,6 @@ $username=$_SESSION['username'];
                                             </li>
                                             <li><a href="./portfolio.php">- Portfolio</a></li>
                                             <li><a href="./portfolio-single.php">- Single Portfolio</a></li>
-                                            <li><a href="./blog.php">- Blog</a></li>
-                                            <li><a href="./single-blog.php">- Blog Details</a></li>
                                             <li><a href="./contact.php">- Contact</a></li>
                                         </ul>
                                     </li>
@@ -159,8 +157,7 @@ $username=$_SESSION['username'];
                         </div>
                     </nav>
                 </div>
-            </div>
-            <?php
+                <?php
             if($Islogged){
                 echo "<p style='text-align:right'>";
                 echo "<font size='4' color='#6666ff'>";
@@ -170,6 +167,7 @@ $username=$_SESSION['username'];
                 echo "</b></p>";
             }
             ?>
+            </div>
         </header>
         <!-- ***** Header Area End ***** -->
 
