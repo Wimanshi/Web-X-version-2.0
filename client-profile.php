@@ -401,11 +401,10 @@ $sss.=" ";
                         <!-- Nav -->
                         <nav>
                             <ul class="our-link">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Forum Registeration</a></li>
-                                <li><a href="#">Forum Sign In</a></li>
+                            <li><a href="about.php">About Us</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
+                                <li><a href="register.php">Forum Registeration</a></li>
+                                <li><a href="login.php">Forum LogIn</a></li>
                             </ul>
                         </nav>
                     </div>

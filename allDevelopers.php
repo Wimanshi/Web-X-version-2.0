@@ -290,11 +290,10 @@ require_once ('class.Database.php');
                         <!-- Nav -->
                         <nav>
                             <ul class="our-link">
-                                <li><a href="about.php">About Us</a></li>
-                                <li><a href="blog.php">Blog</a></li>
+                            <li><a href="about.php">About Us</a></li>
                                 <li><a href="contact.php">Contact Us</a></li>
                                 <li><a href="register.php">Forum Registeration</a></li>
-                                <li><a href="login.php">Forum Sign In</a></li>
+                                <li><a href="login.php">Forum LogIn</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -308,12 +307,18 @@ require_once ('class.Database.php');
 
                         <!-- Nav -->
                         <nav>
-                            <ul class="our-link">
-                                <li><a href="#">Customer Support</a></li>
-                                <li><a href="#">Privacy</a></li>
-                                <li><a href="#">Media &amp; Press</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="contact.php">Contact</a></li>
+                        <ul class="our-link">
+                                <li><a href="about.php">About Us</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="register.php">Forum Registeration</a></li>
+                                <li <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>><a href="login.php">Forum LogIn</a></li>
+                            <li <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>><a href="logout.php">LogOut</a></li>
                             </ul>
                         </nav>
                     </div>

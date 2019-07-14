@@ -85,7 +85,7 @@ $username=$_SESSION['username'];
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="./index.php">- Home</a></li>
-                                            <li class="current-item"><a href="./start exploring.php">- Start Exploring</a></li>
+                                            <li class="current-item"><a href="./start-exploring.php">- Start Exploring</a></li>
                                             <li><a href="./about.php">- About</a></li>
                                             <li><a href="./services.php">- Services</a></li>
                                             <li><a href="#">- Developer List</a>
@@ -124,17 +124,28 @@ $username=$_SESSION['username'];
                                 </ul>
     
                                 <!-- Profile -->
-                                <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                    <a href="./profile-master/index.php" class="btn uza-btn">Profile </a>
-                                </div>
-    
-                                <!-- Login / Register -->
-                                <div class="login-register-btn mx-3">
-                                    <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
-                                </div>
-                                <div class="login-register-btn mx-3">
-                                    <a href="register.php">Register<i class="icon_gift_alt"></i></a>
-                                </div>
+                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
+                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
+                            </div>
+
+                            <!-- Login / Register -->
+
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo "style='display:none'";
+                            }?>>
+                                <a href="login.php">Login<i class="icon_lock-open_alt"></i></a>    
+                            </div>
+                            <div class="login-register-btn mx-3" <?php if($Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="register.php">Register<i class="icon_gift_alt"></i></a>
+                            </div>
+
+                            <div class="login-register-btn mx-3" <?php if(!$Islogged){
+                                echo"style='display:none'";
+                            }?>>
+                                <a href="logout.php">LogOut<i class="icon_lock_alt"></i></a>
+                            </div>
     
                                 <!-- Search Icon -->
                                 <div class="search-icon" data-toggle="modal" data-target="#searchModal">
@@ -334,203 +345,203 @@ $username=$_SESSION['username'];
         <!-- ***** Services Area End ***** -->
     
         <!-- ***** Portfolio Area Start ***** -->
-        <section class="uza-portfolio-area section-padding-80">
+    <section class="uza-portfolio-area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Our Portfolio</h2>
+                        <p>We like to give our service for your benefit</p>
+                        <!--p>We stay on top of our industry by being experts in yours.</p-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Portfolio Slides -->
+                <div class="portfolio-sildes owl-carousel">
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Android.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Android Developing</h4>
+                            <p>We are finding for best of the Android Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="android.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Graphic_design.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Graphic Designing</h4>
+                            <p>We are finding for best of the Graphic Designers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="graphic.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/iOS.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>iOS Developing</h4>
+                            <p>We are finding for best of the iOS Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="ios.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Website_developing.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Website Developing</h4>
+                            <p>We are finding for best of the Website Developers to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="website.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src="./img/bg-img/Video_editing.jpg" alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>Video Editing</h4>
+                            <p>We are finding for best of the Video Editors to market their ability.</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="video.php" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Feedback Area Start -->
+        <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
             <div class="container">
                 <div class="row">
-                    <!-- Section Heading -->
                     <div class="col-12">
-                        <div class="section-heading text-center">
-                            <h2>Our Portfolio</h2>
-                            <p>We like to give our service for your benefit</p>
-                            <!--p>We stay on top of our industry by being experts in yours.</p-->
+                        <!-- Testimonial Slides -->
+                        <div class="testimonial-slides owl-carousel">
+
+                            <!-- Single Testimonial Slide -->
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                <div class="testimonial-thumbnail">
+                                    <img src="./img/bg-img/7.jpg" alt="">
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-content">
+                                    <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
+                                    <!-- Ratings -->
+                                    <div class="ratings">
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                    </div>
+                                    <!-- Author Info -->
+                                    <div class="author-info">
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
+                                    </div>
+                                    <!-- Quote Icon -->
+                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
+                                </div>
+                            </div>
+
+                            <!-- Single Testimonial Slide -->
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                <div class="testimonial-thumbnail">
+                                    <img src="./img/bg-img/23.jpg" alt="">
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-content">
+                                    <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
+                                    <!-- Ratings -->
+                                    <div class="ratings">
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                    </div>
+                                    <!-- Author Info -->
+                                    <div class="author-info">
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
+                                    </div>
+                                    <!-- Quote Icon -->
+                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
+                                </div>
+                            </div>
+
+                            <!-- Single Testimonial Slide -->
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                <div class="testimonial-thumbnail">
+                                    <img src="./img/bg-img/24.jpg" alt="">
+                                </div>
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-content">
+                                    <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
+                                    <!-- Ratings -->
+                                    <div class="ratings">
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                        <i class="icon_star"></i>
+                                    </div>
+                                    <!-- Author Info -->
+                                    <div class="author-info">
+                                        <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
+                                    </div>
+                                    <!-- Quote Icon -->
+                                    <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Portfolio Slides -->
-                    <div class="portfolio-sildes owl-carousel">
-    
-                        <!-- Single Portfolio Slide -->
-                        <div class="single-portfolio-slide">
-                            <img src="./img/bg-img/Android.jpg" alt="">
-                            <!-- Overlay Effect -->
-                            <div class="overlay-effect">
-                                <h4>Android Developing</h4>
-                                <p>We are finding for best of the Android Developers to market their ability.</p>
-                            </div>
-                            <!-- View More -->
-                            <div class="view-more-btn">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
-                            </div>
-                        </div>
-    
-                        <!-- Single Portfolio Slide -->
-                        <div class="single-portfolio-slide">
-                            <img src="./img/bg-img/Graphic design.jpg" alt="">
-                            <!-- Overlay Effect -->
-                            <div class="overlay-effect">
-                                <h4>Graphic Designing</h4>
-                                <p>We are finding for best of the Graphic Designers to market their ability.</p>
-                            </div>
-                            <!-- View More -->
-                            <div class="view-more-btn">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
-                            </div>
-                        </div>
-    
-                        <!-- Single Portfolio Slide -->
-                        <div class="single-portfolio-slide">
-                            <img src="./img/bg-img/iOS.jpg" alt="">
-                            <!-- Overlay Effect -->
-                            <div class="overlay-effect">
-                                <h4>iOS Developing</h4>
-                                <p>We are finding for best of the iOS Developers to market their ability.</p>
-                            </div>
-                            <!-- View More -->
-                            <div class="view-more-btn">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
-                            </div>
-                        </div>
-    
-                        <!-- Single Portfolio Slide -->
-                        <div class="single-portfolio-slide">
-                            <img src="./img/bg-img/Website developing.jpg" alt="">
-                            <!-- Overlay Effect -->
-                            <div class="overlay-effect">
-                                <h4>Website Developing</h4>
-                                <p>We are finding for best of the Website Developers to market their ability.</p>
-                            </div>
-                            <!-- View More -->
-                            <div class="view-more-btn">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
-                            </div>
-                        </div>
-    
-                        <!-- Single Portfolio Slide -->
-                        <div class="single-portfolio-slide">
-                            <img src="./img/bg-img/Video editing.jpg" alt="">
-                            <!-- Overlay Effect -->
-                            <div class="overlay-effect">
-                                <h4>Video Editing</h4>
-                                <p>We are finding for best of the Video Editors to market their ability.</p>
-                            </div>
-                            <!-- View More -->
-                            <div class="view-more-btn">
-                                <a href="#" data-toggle="tooltip" data-placement="top" title="view more"><i class="arrow_right"></i></a>
-                            </div>
-                        </div>
-    
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Client Feedback Area Start -->
-            <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Testimonial Slides -->
-                            <div class="testimonial-slides owl-carousel">
-    
-                                <!-- Single Testimonial Slide -->
-                                <div class="single-testimonial-slide d-flex align-items-center">
-                                    <!-- Testimonial Thumbnail -->
-                                    <div class="testimonial-thumbnail">
-                                        <img src="./img/bg-img/7.jpg" alt="">
-                                    </div>
-                                    <!-- Testimonial Content -->
-                                    <div class="testimonial-content">
-                                        <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
-                                        <!-- Ratings -->
-                                        <div class="ratings">
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                        </div>
-                                        <!-- Author Info -->
-                                        <div class="author-info">
-                                            <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
-                                        </div>
-                                        <!-- Quote Icon -->
-                                        <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                    </div>
-                                </div>
-    
-                                <!-- Single Testimonial Slide -->
-                                <div class="single-testimonial-slide d-flex align-items-center">
-                                    <!-- Testimonial Thumbnail -->
-                                    <div class="testimonial-thumbnail">
-                                        <img src="./img/bg-img/23.jpg" alt="">
-                                    </div>
-                                    <!-- Testimonial Content -->
-                                    <div class="testimonial-content">
-                                        <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
-                                        <!-- Ratings -->
-                                        <div class="ratings">
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                        </div>
-                                        <!-- Author Info -->
-                                        <div class="author-info">
-                                            <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
-                                        </div>
-                                        <!-- Quote Icon -->
-                                        <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                    </div>
-                                </div>
-    
-                                <!-- Single Testimonial Slide -->
-                                <div class="single-testimonial-slide d-flex align-items-center">
-                                    <!-- Testimonial Thumbnail -->
-                                    <div class="testimonial-thumbnail">
-                                        <img src="./img/bg-img/24.jpg" alt="">
-                                    </div>
-                                    <!-- Testimonial Content -->
-                                    <div class="testimonial-content">
-                                        <h4>“Connect in’s ranking has gone up so much from the great work that your team has done and our brand get organic sales consistently from your efforts. We are happy that the results of your efforts were lasting and profitable.”</h4>
-                                        <!-- Ratings -->
-                                        <div class="ratings">
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                            <i class="icon_star"></i>
-                                        </div>
-                                        <!-- Author Info -->
-                                        <div class="author-info">
-                                            <h5>Darrell Goodman <span>- CEO Connect-in</span></h5>
-                                        </div>
-                                        <!-- Quote Icon -->
-                                        <div class="quote-icon"><img src="img/core-img/quote.png" alt=""></div>
-                                    </div>
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Client Feedback Area End -->
-    
-            <!-- Border -->
-            <div class="container">
-                <div class="border-line"></div>
-            </div>
-    
-            <!-- Background Curve -->
-            <div class="portfolio-bg-curve">
-                <img src="./img/core-img/curve-3.png" alt="">
-            </div>
-        </section>
-        <!-- ***** Portfolio Area End ***** -->
+        </div>
+        <!-- Client Feedback Area End -->
+
+        <!-- Border -->
+        <div class="container">
+            <div class="border-line"></div>
+        </div>
+
+        <!-- Background Curve -->
+        <div class="portfolio-bg-curve">
+            <img src="./img/core-img/curve-3.png" alt="">
+        </div>
+    </section>
+    <!-- ***** Portfolio Area End ***** -->
     
         <!-- ***** Blog Area Start ***** -->
         <section class="uza-blog-area">
