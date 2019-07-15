@@ -348,14 +348,14 @@ $username=$_SESSION['username'];
                 $f="finished";
                 $n=$row['id']."cn";
                 if(isset($_POST[$n])){
-                    print($n);
+                    //print($n);
                     $req->setState(new ConfirmState());
                     $req=serialize($req);
                     $q1="UPDATE objreq
                     SET req = '{$req}'
                     WHERE id='{$x}'";
                     mysqli_query($connection,$q1);
-                    header("Refresh:0");
+                    //header("Refresh:0");
                 }
                 $n=$row['id']."c";
                 if(isset($_POST[$n])){
@@ -366,26 +366,26 @@ $username=$_SESSION['username'];
                     SET req = '{$req}'
                     WHERE id='{$x}'";
                     mysqli_query($connection,$q1);
-                    header("Refresh:0");
+                   // header("Refresh:0");
                 }
                 $n=$row['id']."co";
                 if(isset($_POST[$n])){
-                    print($n);
+                    //print($n);
                     $req->setState(new FinishState());
                     $req=serialize($req);
                     $q1="UPDATE objreq
                     SET req = '{$req}'
                     WHERE id='{$x}'";
                     mysqli_query($connection,$q1);
-                    header("Refresh:0");
+                    //header("Refresh:0");
                 }
                 if(isset($_POST[$x])){
                     $rating='';
-                    print($x);
+                    //print($x);
                     $rating=mysqli_real_escape_string($connection,$_POST['rate']);
                     echo $rating;
                     if($rating=='Rate Developer'){
-                        print('xxx');
+                        //print('xxx');
                     }else{
                     $req->setClientRating($rating);
                     $req=serialize($req);
@@ -393,7 +393,7 @@ $username=$_SESSION['username'];
                     SET req = '{$req}'
                     WHERE id='{$x}'";
                     mysqli_query($connection,$q1);
-                    header("Refresh:0");
+                    //header("Refresh:0");
                     }
                     /*$q1="UPDATE requests
                     SET status = '{$f}'
