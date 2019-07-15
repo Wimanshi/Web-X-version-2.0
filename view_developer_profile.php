@@ -45,9 +45,10 @@ if(isset($_SERVER['HTTP_REFERER'])) {
     //$user = mysqli_fetch_assoc($result_set);
     $phone = $user['phone'];
     $proffesion = $user['developer_type'];
-    //$linkedIn = $user['linkedin'];
+    $linkedIn = $user['linkedIn'];
     $ranking =(int) $user['ranking'];
     $profpic=$user['profilephoto'];
+    $type1=$_SESSION['userType'];
     //$image = '<img src = "data:image/jpeg;base64,'.base64_encode($user['Profile_Photo']).'" height="200" width = "200"/>';
     $_SESSION['developer_name']=$username;
     $_SESSION['developer_email']=$email;
@@ -266,7 +267,7 @@ $sss.=" ";
                             <div class="get-a-quote" <?php if(!$Islogged){
                                 echo"style='display:none'";
                             }?>>
-                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
+                                <a href="./<?php echo $type1?>-profile.php" class="btn uza-btn">Profile </a>
                             </div>
 
                             <!-- Login / Register -->

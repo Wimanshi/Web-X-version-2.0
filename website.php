@@ -129,12 +129,6 @@ require_once ('class.Database.php');
                                 </li>
                                 
                             </ul>
-
-                            <!-- Profile -->
-                            <div class="get-a-quote"margin-right: 0px;margin-left: 0px;>
-                                <a href="./<?php echo $type?>-profile.php" class="btn uza-btn">Profile </a>
-                            </div>
-
                             <!-- Profile -->
                             <div class="get-a-quote" <?php if(!$Islogged){
                                 echo"style='display:none'";
@@ -170,6 +164,16 @@ require_once ('class.Database.php');
                     </div>
                 </nav>
             </div>
+            <?php
+            if($Islogged){
+                echo "<p style='text-align:right'>";
+                echo "<font size='4' color='#6666ff'>";
+                echo "you logged in as :  ";
+                echo "<b>";
+                echo $username;
+                echo "</b></p>";
+            }
+            ?>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
