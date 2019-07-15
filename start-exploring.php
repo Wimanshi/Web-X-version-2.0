@@ -252,7 +252,15 @@ $username=$_SESSION['username'];
                                 <div class="welcome-text">
                                     <h2> <span>As a Client</span></h2>
                                     <h5>You can register as a client</h5>
-                                    <a href="#" class="btn uza-btn btn-2">Register as a Client</a>
+                                    <div class="btn uza-btn btn-2" <?php if($Islogged){echo"style='display:none'";}?>>
+                                        <a href="register.php">Register as a Client</a>
+                                    </div>
+                                    <div <?php if(!$Islogged){echo"style='display:none'";}?>>
+                                    <div class="btn uza-btn btn-2">
+                                        <a href="#">Register as a Client</a>
+                                    </div><br>
+                                        already registered as a user
+                                    </div>
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
@@ -267,7 +275,15 @@ $username=$_SESSION['username'];
                                 <div class="welcome-text">
                                     <h2> <span>As a Developer</span></h2>
                                     <h5>You can register as a Developer</h5>
-                                    <a href="#" class="btn uza-btn btn-2">Register as a Developer</a>
+                                    <div class="btn uza-btn btn-2" <?php if($Islogged){echo"style='display:none'";}?>>
+                                        <a href="register.php">Register as a Developer</a>
+                                    </div>
+                                    <div <?php if(!$Islogged){echo"style='display:none'";}?>>
+                                    <div class="btn uza-btn btn-2">
+                                        <a href="#">Register as a Developer</a>
+                                    </div><br>
+                                        already registered as a user
+                                    </div>
                                 </div>
                             </div>
                             <!-- Welcome Thumbnail -->
