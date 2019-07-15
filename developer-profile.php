@@ -382,9 +382,7 @@ $sss.=" ";
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Skills</h2>
                 </div>
-                <div class="col-md-8 col-md-offset-2 text-center">
-					<h2>Skills</h2>
-				</div>
+                
 			</div>
 			<div class="row row-pb-md">
 				
