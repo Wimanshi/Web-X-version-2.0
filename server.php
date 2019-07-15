@@ -68,7 +68,7 @@
                 mysqli_query($connection,$sql);
                 $_SESSION['username'] = $username;
                 $_SESSION['email'] = $email;
-                $_SESSION['type'] = $type;
+                $_SESSION['userType'] = $type;
                 $_SESSION['linkedIn'] = $LinkedIn;
                 $_SESSION['success'] = "You are now logged in";
                 
@@ -79,7 +79,7 @@
                 mysqli_query($connection,$sql);
                 $_SESSION['username'] = $username;
                 $_SESSION['email'] = $email;
-                $_SESSION['type'] = $type;
+                $_SESSION['userType'] = $type;
                 $_SESSION['success'] = "You are now logged in";
                 header('location: index.php');
             }
