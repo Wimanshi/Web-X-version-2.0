@@ -208,6 +208,7 @@ $username=$_SESSION['username'];
     <!-- ***** Request Box Area Start ***** -->
     <div class="post-content text-center mb-50">
         <h2>All requests I received</h2>
+        <h5>Requests will auto cancelled after 24 hours</h5>
     </div>
             <?php
             $query = "SELECT * FROM objreq ";
